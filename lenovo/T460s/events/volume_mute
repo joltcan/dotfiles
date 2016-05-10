@@ -1,0 +1,2 @@
+event=button/mute.*
+action=/usr/local/bin/volume.sh mute

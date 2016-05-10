@@ -1,0 +1,2 @@
+event=button/volumeup *
+action=/usr/local/bin/volume.sh up
