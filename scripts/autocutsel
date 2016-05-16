@@ -1,0 +1,5 @@
+#!/bin/bash 
+/usr/bin/autocutsel -f -s PRIMARY
+/usr/bin/autocutsel -f -s CLIPBOARD
+/usr/bin/autocutsel -f -s SECONDARY
+

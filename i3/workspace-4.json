@@ -1,0 +1,22 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1041,
+       "width": 1916,
+       "x": 4,
+       "y": 23
+    },
+    "name": "1Password",
+    "percent": 1,
+    "swallows": [
+       {
+        "class": "^1Password\\.exe$",
+        "instance": "^1Password\\.exe$",
+       }
+    ],
+    "type": "con"
+}
+
