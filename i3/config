@@ -197,17 +197,17 @@ workspace 4 output eDP1
 workspace 5 output DP2-2
 workspace 6 output DP2-2
 
-exec --no-startup-id "i3-msg 'workspace 1; append_layout /home/jolt/.config/i3/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
 exec slack &
 exec gnome-terminal --role irssi -e "ssh-add ~/.ssh/id_rsa" &
-exec --no-startup-id "i3-msg 'workspace 2; append_layout /home/jolt/.config/i3/workspace-2.json'"
+exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/workspace-2.json'"
 # start some terminals on certain desktop 2
 exec gnome-terminal --role term1-2 &
 exec gnome-terminal --role term2-2 &
 exec gnome-terminal --role term3-2 &
-exec --no-startup-id "i3-msg 'workspace 3; append_layout /home/jolt/.config/i3/workspace-3.json'"
+exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/workspace-3.json'"
 exec chromium-browser &
-exec --no-startup-id "i3-msg 'workspace 4; append_layout /home/jolt/.config/i3/workspace-4.json'"
+exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/.config/i3/workspace-4.json'"
 assign [class="1Password.exe"] 4
 exec 1password &
 exec --no-startup-id "xset dpms 300 600 900 & "
