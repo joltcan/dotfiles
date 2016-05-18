@@ -172,8 +172,8 @@ bar {
 for_window [class="^Spotify$"] floating enable
 
 # Lock
-bindsym Mod1+Ctrl+l exec "i3lock -t -i ~/Dropbox/Bilder/BG/pluto_bg.png'
-exec xautolock -time 5 -locker 'i3lock -i  ~/Dropbox/Bilder/BG/pluto_bg.png -t ' &
+bindsym Mod1+Ctrl+l exec "i3lock -t -i ~/Dropbox/Bilder/BG/pluto_bg.png"
+exec xautolock -time 5 -locker "i3lock -i ~/Dropbox/Bilder/BG/pluto_bg.png -t " &
 
 bindsym $mod+F7 exec "~/Dropbox/linux/toggle_screen.sh"
 
@@ -184,7 +184,7 @@ exec --no-startup-id "wine \"C:\Program Files (x86)\1Password 4\Agile1pAgent.exe
 
 # Start autocutsel to sync clipboards
 exec --no-startup-id "~/dotfiles/scripts/autocutsel"
-"
+
 #bindsym $mod+Mod1+c exec "~/Dropbox/linux/test.sh"
 
 # Start autocutsel to sync clipboards
@@ -199,7 +199,7 @@ workspace 6 output DP2-2
 
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
 exec slack &
-exec gnome-terminal --role irssi -e "ssh-add ~/.ssh/id_rsa" &
+exec gnome-terminal --role irssi &
 exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/workspace-2.json'"
 # start some terminals on certain desktop 2
 exec gnome-terminal --role term1-2 &
@@ -211,5 +211,8 @@ exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/.config/i3/workspace-
 assign [class="1Password.exe"] 4
 exec 1password &
 exec --no-startup-id "xset dpms 300 600 900 & "
+exec --no-startup-id autokey
+exec --no-startup-id pidgin
+exec --no-startup-id nm-applet
 
 
