@@ -185,6 +185,9 @@ exec --no-startup-id "wine \"C:\Program Files (x86)\1Password 4\Agile1pAgent.exe
 # Start autocutsel to sync clipboards
 exec --no-startup-id "~/dotfiles/scripts/autocutsel"
 
+# logitech stuff
+exec --no-startup-id xbindkeys
+
 #bindsym $mod+Mod1+c exec "~/Dropbox/linux/test.sh"
 
 # Start autocutsel to sync clipboards
