@@ -63,5 +63,8 @@ map <silent> <C-t> :NERDTreeToggle<CR>
 
 let g:vim_markdown_folding_disabled = 1
 
-:autocmd FileType yaml execute  ':silent! %s#^\t\+#\=repeat(" ", len(submatch(0))*' . &ts . ')'
+autocmd FileType yaml setl indentkeys-=<:>
+
+:set mousemodel=extend
+
 

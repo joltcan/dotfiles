@@ -172,8 +172,8 @@ bar {
 for_window [class="^Spotify$"] floating enable
 
 # Lock
-bindsym Mod1+Ctrl+l exec "i3lock -t -i ~/Dropbox/Bilder/BG/pluto_bg.png"
-exec xautolock -time 5 -locker "i3lock -i ~/Dropbox/Bilder/BG/pluto_bg.png -t " &
+bindsym Mod1+Ctrl+l exec ~/dotfiles/scripts/lock_script.sh
+exec xautolock -time 5 -locker ~/dotfiles/scripts/lock_script.sh &
 
 bindsym $mod+F7 exec "~/Dropbox/linux/toggle_screen.sh"
 
