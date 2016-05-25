@@ -12,8 +12,6 @@ Bundle 'tpope/vim-surround.git'
 Plugin 'Valloric/YouCompleteMe'
 
 
-
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -67,4 +65,5 @@ autocmd FileType yaml setl indentkeys-=<:>
 
 :set mousemodel=extend
 
-
+" remove search with leader c
+map <leader>c :nohl<CR>

@@ -152,9 +152,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Volume control 
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 -- +5% && pactl set-sink-mute 0 0
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -- -5% && pactl set-sink-mute 0 0
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 -- +5% && pactl set-sink-mute 0 0
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -- -5% && pactl set-sink-mute 0 0
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+plus exec --no-startup-id amixer sset Master 10+
+bindsym $mod+minus exec --no-startup-id amixer sset Master 10-
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -181,15 +183,11 @@ bindsym $mod+F7 exec "~/Dropbox/linux/toggle_screen.sh"
 exec --no-startup-id "dropbox start"
 exec --no-startup-id "~/Dropbox/linux/toggle_screen.sh"
 
-# Start autocutsel to sync clipboards
-#exec --no-startup-id "~/dotfiles/scripts/autocutsel"
-exec --no-startup-id autocutsel
-
-
 #bindsym $mod+Mod1+c exec "~/Dropbox/linux/test.sh"
 
 # Start autocutsel to sync clipboards
-#exec --no-startup-id ~/dotfiles/scripts/autocutsel
+exec --no-startup-id ~/dotfiles/scripts/autocutsel
+
 # bind workspaces to the right monitors
 workspace 1 output eDP1
 workspace 2 output DP2-2
@@ -212,10 +210,5 @@ exec --no-startup-id "xset dpms 300 600 900 & "
 exec --no-startup-id pidgin
 exec --no-startup-id nm-applet
 
-
-# Ignore 1Password for now
-#exec --no-startup-id "wine \"C:\Program Files (x86)\1Password 4\Agile1pAgent.exe\""
-#exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/.config/i3/workspace-4.json'"
-#assign [class="1Password.exe"] 4
-#exec 1password &
-
+# testing testing
+#exec --no-startup-id sudo powernap-action --disable usb_autosuspend &
