@@ -175,13 +175,14 @@ for_window [class="^Spotify$"] floating enable
 
 # Lock
 bindsym Mod1+Ctrl+l exec ~/dotfiles/scripts/lock_script.sh
-exec xautolock -time 5 -locker ~/dotfiles/scripts/lock_script.sh &
+exec xautolock -time 5 -locker "~/dotfiles/scripts/lock_script.sh" &
 
 bindsym $mod+F7 exec "~/Dropbox/linux/toggle_screen.sh"
 
 # Exec on startup 
 exec --no-startup-id "dropbox start"
 exec --no-startup-id "~/Dropbox/linux/toggle_screen.sh"
+exec --no-startup-id autokey
 
 #bindsym $mod+Mod1+c exec "~/Dropbox/linux/test.sh"
 
