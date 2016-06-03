@@ -171,6 +171,7 @@ bar {
         status_command i3status
 }
 
+# Floating windows
 for_window [class="^Spotify$"] floating enable
 
 # Lock
@@ -207,9 +208,10 @@ exec gnome-terminal --role term2-2 &
 exec gnome-terminal --role term3-2 &
 exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/workspace-3.json'"
 exec chromium-browser &
-exec --no-startup-id "xset dpms 300 600 900 & "
 exec --no-startup-id pidgin
 exec --no-startup-id nm-applet
 
 # Lagging keys on keyboard, not sure if this is helps yet.
 exec --no-startup-id sudo powernap-action --disable usb_autosuspend &
+
+
