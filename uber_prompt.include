@@ -56,7 +56,10 @@ set_prompt()
    # Line 4: green git branch
    PS1+="\[$txtgreen\]$(__git_ps1 ' (%s)')\[$txtwhite\]"
    # Line 4: good old prompt, $ for user, # for root
+<<<<<<< HEAD
    # and \e is for gnome title
+=======
+>>>>>>> 0601fcdd727d80540ec41b88406b33ba788463d9
    PS1+=" \\$ \[\e]0;\u@\h: \w\a\]"
 }
 
