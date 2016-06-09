@@ -56,7 +56,7 @@ set_prompt()
    # Line 4: green git branch
    PS1+="\[$txtgreen\]$(__git_ps1 ' (%s)')\[$txtwhite\]"
    # Line 4: good old prompt, $ for user, # for root
-   PS1+=" \\$ "
+   PS1+=" \\$ \[\e]0;\u@\h: \w\a\]"
 }
 
 PROMPT_COMMAND='set_prompt'
