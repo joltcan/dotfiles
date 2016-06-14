@@ -10,6 +10,7 @@ Bundle 'plasticboy/vim-markdown.git'
 Bundle 'tpope/vim-sensible.git'
 Bundle 'tpope/vim-surround.git'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'fatih/vim-go'
 
 
 " All of your Plugins must be added before the following line
