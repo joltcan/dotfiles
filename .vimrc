@@ -1,7 +1,8 @@
+
 set nocompatible			" prevent vim from emulating the original vi's bugs and limitations.
 " Required Vundle setup
 filetype off
-set runtimepath+=~/.vim/bundle/vundle
+set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -9,7 +10,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'tpope/vim-sensible.git'
 Bundle 'tpope/vim-surround.git'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
 
 
@@ -35,7 +35,7 @@ set winminheight=1			" ok to squash windows
 
 "set backup                 " enable creation of backup files
 set incsearch				" makes vim search as soon as you start typing (can be slow)
-set expandtab				" converts tabs/indents to normal spaces
+"set expandtab				" converts tabs/indents to normal spaces
 "set bg=dark				" make colors more visible on dark themes
 
 "set listchars=eol:$,tab:>-,trail:•,extends:»,precedes:«,nbsp:%
@@ -68,3 +68,5 @@ autocmd FileType yaml setl indentkeys-=<:>
 
 " remove search with leader c
 map <leader>c :nohl<CR>
+
+autocmd filetype crontab setlocal nobackup nowritebackup
