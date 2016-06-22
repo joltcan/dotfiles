@@ -12,8 +12,12 @@
 IN="eDP1"
 EXT="DP2-2"
 
+
 if (xrandr | grep "$EXT disconnected"); then
 	xrandr --output $EXT --off --output $IN --auto
+    # lock just in case
+    /usr/local/bin/lock_script.sh &
 else
 	xrandr --output $IN --auto --output $EXT --auto --left-of $IN --primary
 fi
+

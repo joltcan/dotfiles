@@ -185,6 +185,8 @@ exec --no-startup-id "dropbox start"
 exec --no-startup-id "toggle_screen.sh"
 exec --no-startup-id autokey
 
+exec --no-startup-id unity-settings-daemon
+
 #bindsym $mod+Mod1+c exec "~/Dropbox/linux/test.sh"
 
 # Start autocutsel to sync clipboards
@@ -214,4 +216,6 @@ exec --no-startup-id nm-applet
 # Lagging keys on keyboard, not sure if this is helps yet.
 exec --no-startup-id sudo powernap-action --disable usb_autosuspend &
 
+# good for browsers
+for_window [window_role="pop-up"] floating enable
 
