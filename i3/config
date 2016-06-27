@@ -151,6 +151,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# start settings early
+exec --no-startup-id unity-settings-daemon
+
 # Volume control 
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 -- +5% && pactl set-sink-mute 0 0
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -- -5% && pactl set-sink-mute 0 0
@@ -163,7 +166,6 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Kill workspace 
-
 bindsym $mod+Control+Shift+k focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, kill
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -184,8 +186,6 @@ bindsym $mod+F7 exec "toggle_screen.sh"
 exec --no-startup-id "dropbox start"
 exec --no-startup-id "toggle_screen.sh"
 exec --no-startup-id autokey
-
-exec --no-startup-id unity-settings-daemon
 
 #bindsym $mod+Mod1+c exec "~/Dropbox/linux/test.sh"
 
