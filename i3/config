@@ -151,9 +151,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# start settings early
-exec --no-startup-id unity-settings-daemon
-
 # Volume control 
 #bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 -- +5% && pactl set-sink-mute 0 0
 #bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -- -5% && pactl set-sink-mute 0 0
@@ -171,20 +168,18 @@ bindsym $mod+Control+Shift+k focus parent, focus parent, focus parent, focus par
 # finds out, if available)
 bar {
         status_command i3status
+		tray_output primary
 }
-
-# Floating windows
-for_window [class="^Spotify$"] floating enable
 
 # Lock
 bindsym Mod1+Ctrl+l exec ~/dotfiles/scripts/lock_script.sh
-exec xautolock -time 5 -locker "~/dotfiles/scripts/lock_script.sh" &
+exec xautolock -time 5 -detectsleep -locker "~/dotfiles/scripts/lock_script.sh" &
 
 bindsym $mod+F7 exec "toggle_screen.sh"
 
 # Exec on startup 
+exec --no-startup-id unity-settings-daemon
 exec --no-startup-id "dropbox start"
-exec --no-startup-id "toggle_screen.sh"
 exec --no-startup-id autokey
 
 #bindsym $mod+Mod1+c exec "~/Dropbox/linux/test.sh"
@@ -199,6 +194,9 @@ workspace 3 output DP2-2
 workspace 4 output DP2-2
 workspace 5 output DP2-2
 workspace 6 output DP2-2
+# Floating windows
+#for_window [class="^Spotify$"] floating enable
+
 
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
 exec slack &
