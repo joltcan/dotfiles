@@ -38,6 +38,8 @@ set_prompt()
    # @host - note if host is not my laptop
    if [[ $HOSTNAME == "SEMALL0404" ]]; then
        PS1+="\u\[$txtwhite\]@\h"
+   elif [ -e ~/.host-PS1-override ]; then
+	   source ~/.host-PS1-override
    else
        PS1+="\u\[$txtwhite\]@\[$txtbackgreen\]\h\[$txtreset\]"
    fi
