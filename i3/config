@@ -175,15 +175,17 @@ bar {
 bindsym Mod1+Ctrl+l exec ~/dotfiles/scripts/lock_script.sh
 #exec --no-startup-id xautolock -time 5 -locker "~/dotfiles/scripts/lock_script.sh" &
 # set screensaver timeout to 300 s
-exec --no-startup-id xset s 300
-exec --no-startup-id xss "~/dotfiles/scripts/lock_script.sh" &
-
 
 bindsym $mod+F7 exec "toggle_screen.sh"
 
 # Exec on startup 
 exec --no-startup-id unity-settings-daemon
+exec --no-startup-id xset s 300
+exec --no-startup-id xss-lock "~/dotfiles/scripts/lock_script.sh" &
 exec --no-startup-id "dropbox start"
+exec --no-startup-id "glipper"
+
+for_window [class="^AutoKey$"] floating enable
 exec --no-startup-id autokey
 
 #bindsym $mod+Mod1+c exec "~/Dropbox/linux/test.sh"
@@ -216,7 +218,7 @@ exec gnome-terminal --role term1-2 &
 exec gnome-terminal --role term2-2 &
 exec gnome-terminal --role term3-2 &
 exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/workspace-3.json'"
-exec chromium-browser &
+#exec chromium-browser &
 exec --no-startup-id pidgin
 exec --no-startup-id nm-applet
 
