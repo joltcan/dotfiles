@@ -178,6 +178,12 @@ bindsym Mod1+Ctrl+l exec ~/dotfiles/scripts/lock_script.sh
 
 bindsym $mod+F7 exec "toggle_screen.sh"
 
+# Floating windows
+#for_window [class="^Spotify$"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [class="remmina"] floating enable
+for_window [class="^AutoKey$"] floating enable
+
 # Exec on startup 
 exec --no-startup-id unity-settings-daemon
 exec --no-startup-id xset s 300
@@ -185,13 +191,12 @@ exec --no-startup-id xss-lock "~/dotfiles/scripts/lock_script.sh" &
 exec --no-startup-id "dropbox start"
 exec --no-startup-id "glipper"
 
-for_window [class="^AutoKey$"] floating enable
 exec --no-startup-id autokey
 
 #bindsym $mod+Mod1+c exec "~/Dropbox/linux/test.sh"
 
-# Start autocutsel to sync clipboards
-exec --no-startup-id ~/dotfiles/scripts/autocutsel
+# Start autocutsel to sync clipboards. Lets try glippy instead!
+#exec --no-startup-id ~/dotfiles/scripts/autocutsel
 
 # bind workspaces to the right monitors
 workspace 1 output eDP1
@@ -201,12 +206,6 @@ workspace 4 output DP2-2
 workspace 5 output DP2-2
 workspace 6 output DP2-2
 
-# Floating windows
-#for_window [class="^Spotify$"] floating enable
-#
-for_window [class="^AutoKey$"] floating enable
-for_window [window_role="pop-up"] floating enable
-for_window [class="memmina"] floating enable
 
 
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
