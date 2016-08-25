@@ -172,8 +172,8 @@ bar {
 }
 
 # Lock
-bindsym Mod1+Ctrl+l exec ~/dotfiles/scripts/lock_script.sh
-#exec --no-startup-id xautolock -time 5 -locker "~/dotfiles/scripts/lock_script.sh" &
+#bindsym Mod1+Ctrl+l exec ~/dotfiles/scripts/lock_script.sh
+bindsym Mod1+Ctrl+l exec xautolock -locknow
 # set screensaver timeout to 300 s
 
 bindsym $mod+F7 exec "toggle_screen.sh"
@@ -186,17 +186,14 @@ for_window [class="^AutoKey$"] floating enable
 
 # Exec on startup 
 exec --no-startup-id unity-settings-daemon
-exec --no-startup-id xset s 300
-exec --no-startup-id xss-lock "~/dotfiles/scripts/lock_script.sh" &
+exec --no-startup-id xautolock -locker "/usr/local/bin/lock_script.sh" -time 5 -corners ++-0 -cornerdelay 1 -cornerredelay 5 -cornersize 5 &
 exec --no-startup-id "dropbox start"
 exec --no-startup-id "glipper"
 exec --no-startup-id autokey
 exec --no-startup-id skype
 
-#bindsym $mod+Mod1+c exec "~/Dropbox/linux/test.sh"
-
-# Start autocutsel to sync clipboards. Lets try glippy instead!
-#exec --no-startup-id ~/dotfiles/scripts/autocutsel
+# Start autocutsel to sync clipboards.
+exec --no-startup-id ~/dotfiles/scripts/autocutsel
 
 # bind workspaces to the right monitors
 workspace 1 output eDP1
