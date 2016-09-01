@@ -63,6 +63,8 @@ autocmd FileType yaml setl indentkeys-=<:>
 
 :set mousemodel=extend
 set mouse=a
+set pastetoggle=<F10>
+
 
 " remove search with leader c
 map <leader>c :nohl<CR>
