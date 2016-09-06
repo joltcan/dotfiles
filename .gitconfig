@@ -164,8 +164,20 @@
     # }}}
     # worktree list {{{
     wl = worktree list
-    # }}}
+	# }}}
 # }}}
+    # svenska alias från https://github.com/bjorne/git-pa-svenska
+	ryck = pull
+	knuffa = push
+	gren = branch
+	forgrena = branch
+	forbinda = commit
+	ympa = rebase
+	sammanfoga = merge
+	gom = stash
+	klandra = blame
+	marke = tag
+	mark = tag
 [rerere]
   enabled = false
 [rebase]
