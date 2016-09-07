@@ -62,7 +62,6 @@ let g:vim_markdown_folding_disabled = 1
 autocmd FileType yaml setl indentkeys-=<:>
 
 :set mousemodel=extend
-set mouse=a
 set pastetoggle=<F10>
 
 
