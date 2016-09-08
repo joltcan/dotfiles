@@ -1,0 +1,90 @@
+xterm*dynamicColors: true
+xterm*background: black
+xterm*foreground: white
+xterm*utf8: 2
+xterm*eightBitInput: true
+xterm*saveLines: 32767
+xterm*scrollTtyKeypress: true
+xterm*scrollTtyOutput: false
+xterm*scrollBar: false
+xterm*loginShell: true
+xterm*faceName: Monospace:pixelsize=11
+xterm*jumpScroll: true
+xterm*multiScroll: true
+xterm*toolBar: false
+xterm*geometry: 80x25
+! General
+!
+URxvt*termName:  xterm-256color
+URxvt*loginShell:         true
+URxvt*scrollBar:         false
+URxvt*secondaryScroll:    true
+URxvt*saveLines:         65535
+URxvt*cursorBlink:       false
+URxvt*urgentOnBell:       false
+!URxvt*override-redirect:false
+!URxvt*borderLess:		true
+URxvt*internalBorder:       1
+URxvt*externalBorder:       1
+
+! Extensions
+URxvt*perl-lib:        /usr/lib/URxvt/perl/
+URxvt*perl-ext-common: default,matcher,searchable-scrollback
+!URxvt*url-launcher:     /usr/bin/google-chrome
+URxvt*url-launcher:     /usr/lib/chromium-browser/chromium-browser
+URxvt*UnderLineURLs:    true
+URxvt*matcher.button:  1
+!  - catch ugly URLs
+URxvt.cutchars:        "`()'*<>[]{|}="
+
+! Appearance
+!  - use a bitmap font
+! URxvt*font:        -xos4-terminus-medium-*-*-*-11-*-*-*-*-*-*-*
+! URxvt*boldFont:    -xos4-terminus-bold-*-*-*-11-*-*-*-*-*-*-*
+!  - use xft for drawing fonts
+URxvt.font: xft:Terminus:size=9:antialias=true:hinting=false
+!URxvt.boldfont: xft:Terminus:size=9:antialias=true:hinting=false:bold=true
+!URxvt.italicfont: xft:Terminus:size=9:antialias=true:hinting=false:bold=false:italic=true
+!URxvt.boldItalicfont: xft:Terminus:size=9:antialias=true:hinting=false:bold=true:italic=true
+! URxvt.font: xft:DejaVu Sans Mono:pixelsize=12
+! URxvt.font: xft:inconsolata for powerline:size=10:antialias=true:hinting=true,xft:dejavu sans mono:pixelsize=18:antialias=true:hinting=true
+!  URxvt.boldFont: xft:inconsolata for powerline:bold:pixelsize=10:antialias=true:hinting=true,xft:dejavu sans mono:bold:pixelsize=18:antialias=true:hinting=true
+! URxvt.italicFont: xft:inconsolata for powerline:italic:pixelsize=10:antialias=true:hinting=true,xft:dejavu sans mono:italic:pixelsize=18:antialias=true:hinting=true
+! URxvt.boldItalicFont: xft:inconsolata for powerline:bold:italic:pixelsize=10:antialias=true:hinting=true,xft:dejavu sans mono:bold:italic:pixelsize=18:antialias=true:hinting=true
+URxvt.letterSpace: 1
+!URxvt*font:       xft:Terminus:8
+!  - cursor
+URxvt*cursorColor: #017b00
+!  - pseudo transparency
+!URxvt*shading:    50
+!URxvt*transparent:true
+!
+URxvt.foreground: #DDDDDD
+URxvt.background: #050505
+! Black
+URxvt.color0:  #303030
+URxvt.color8:  #404040
+! Red
+URxvt.color1:  #E84F4F
+URxvt.color9:  #D23D3D
+! Green
+URxvt.color2:  #B8D68C
+URxvt.color10: #A0CF5D
+! Yellow
+URxvt.color3:  #E1AA5D
+URxvt.color11: #F39D21
+! Blue
+URxvt.color4:  #375695
+URxvt.color12: #4E9FB1
+! Magenta
+URxvt.color5:  #9B64FB
+URxvt.color13: #8542FF
+! Cyan
+URxvt.color6:  #6D878D
+URxvt.color14: #42717B
+! White
+URxvt.color7:  #ffffff
+URxvt.color15: #ffffff
+
+! Shortcuts
+URxvt.keysym.M-C-s: command
