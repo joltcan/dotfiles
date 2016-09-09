@@ -32,7 +32,6 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvt
-#bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -181,18 +180,19 @@ bindsym $mod+F7 exec "toggle_screen.sh"
 # Floating windows
 for_window [window_role="pop-up"] floating enable
 for_window [class="remmina"] floating enable
-for_window [class="^AutoKey$"] floating enable
+for_window [title="AutoKey"] floating enable
 
 # Exec on startup 
 exec --no-startup-id unity-settings-daemon
 exec --no-startup-id xautolock -locker "/usr/local/bin/lock_script.sh" -time 5 -corners ++-0 -cornerdelay 1 -cornerredelay 5 -cornersize 5 &
 exec --no-startup-id "dropbox start"
 exec --no-startup-id "glipper"
-exec --no-startup-id autokey
+exec --no-startup-id autokey-gtk
 exec --no-startup-id skype
 
 # Start autocutsel to sync clipboards.
-exec --no-startup-id ~/dotfiles/scripts/autocutsel
+# Trying urxvt buffers for this and autokey for paste
+#exec --no-startup-id ~/dotfiles/scripts/autocutsel
 
 # bind workspaces to the right monitors
 workspace 1 output eDP1
@@ -204,12 +204,12 @@ workspace 6 output DP2-2
 
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
 exec slack &
-exec gnome-terminal --role irssi &
+exec urxvt --role irssi &
 exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/workspace-2.json'"
 # start some terminals on certain desktop 2
-exec gnome-terminal --role term1-2 &
-exec gnome-terminal --role term2-2 &
-exec gnome-terminal --role term3-2 &
+exec urxvt --role term1-2 &
+exec urxvt --role term2-2 &
+exec urxvt --role term3-2 &
 exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/workspace-3.json'"
 #exec chromium-browser &
 exec --no-startup-id pidgin

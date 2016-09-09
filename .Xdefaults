@@ -28,8 +28,8 @@ URxvt*internalBorder:       1
 URxvt*externalBorder:       1
 
 ! Extensions
-URxvt*perl-lib:        /usr/lib/URxvt/perl/
-URxvt*perl-ext-common: default,matcher,searchable-scrollback
+URxvt*perl-lib:        /usr/lib/urxvt/perl/
+URxvt*perl-ext-common: default,matcher,searchable-scrollback,selection-to-clipboard
 !URxvt*url-launcher:     /usr/bin/google-chrome
 URxvt*url-launcher:     /usr/lib/chromium-browser/chromium-browser
 URxvt*UnderLineURLs:    true
@@ -56,11 +56,11 @@ URxvt.letterSpace: 1
 !  - cursor
 URxvt*cursorColor: #017b00
 !  - pseudo transparency
-!URxvt*shading:    50
-!URxvt*transparent:true
+URxvt*shading:    50
+URxvt*transparent:true
 !
 URxvt.foreground: #DDDDDD
-URxvt.background: #050505
+URxvt.background: #151515
 ! Black
 URxvt.color0:  #303030
 URxvt.color8:  #404040
@@ -87,4 +87,6 @@ URxvt.color7:  #ffffff
 URxvt.color15: #ffffff
 
 ! Shortcuts
-URxvt.keysym.M-C-s: command
+!URxvt.keysym.M-C-s: command
+
+!URxvt*iso14755:	false
