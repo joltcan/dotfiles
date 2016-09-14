@@ -63,9 +63,13 @@ autocmd FileType yaml setl indentkeys-=<:>
 
 :set mousemodel=extend
 set pastetoggle=<F10>
-
+set background=dark
 
 " remove search with leader c
 map <leader>c :nohl<CR>
 
+" fix edit crontab in osx
 autocmd filetype crontab setlocal nobackup nowritebackup
+
+"fix hilight color
+hi Visual term=reverse cterm=reverse guibg=Grey
