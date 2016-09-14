@@ -186,12 +186,13 @@ for_window [title="AutoKey"] floating enable
 exec --no-startup-id unity-settings-daemon
 exec --no-startup-id xautolock -locker "/usr/local/bin/lock_script.sh" -time 5 -corners ++-0 -cornerdelay 1 -cornerredelay 5 -cornersize 5 &
 exec --no-startup-id "dropbox start"
-exec --no-startup-id "glipper"
 exec --no-startup-id autokey-gtk
 
 # Start autocutsel to sync clipboards.
 # Trying urxvt buffers for this and autokey for paste
 #exec --no-startup-id ~/dotfiles/scripts/autocutsel
+# and lets try clipman to do the right thing
+#exec --no-startup-id "glipper"
 
 # bind workspaces to the right monitors
 workspace 1 output DP2-2
