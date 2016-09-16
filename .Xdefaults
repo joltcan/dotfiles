@@ -1,3 +1,4 @@
+!  xrdb -merge ~/.Xdefaults ; urxvt
 xterm*dynamicColors: true
 xterm*background: black
 xterm*foreground: white
