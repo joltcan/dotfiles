@@ -30,10 +30,7 @@
                     "swallows": [
                        {
                        "class": "^URxvt$",
-                       // "instance": "^urxvt$",
-                       // "title": "^jolt\\@SEMALL0404\\:\\ \\~$",
-                       // "transient_for": "^$"
-                       }
+                       "class": "^Gnome-terminal$"
                     ],
                     "type": "con"
                 },
@@ -59,7 +56,8 @@
                             "percent": null,
                             "swallows": [
                                {
-                               // "class": "^URxvt$",
+                                "class": "^Gnome-terminal$",
+                                "class": "^URxvt$"
                                // "instance": "^urxvt$",
                                // "title": "^jolt\\@SEMALL0404\\:\\ \\~$",
                                // "transient_for": "^$"
@@ -93,7 +91,8 @@
                     "percent": 0.7,
                     "swallows": [
                        {
-                       "class": "^URxvt$"
+                       "class": "^URxvt$",
+                       "class": "^Gnome-terminal$"
                        }
                     ],
                     "type": "con"
@@ -112,7 +111,8 @@
                     "percent": 0.3,
                     "swallows": [
                        {
-                        "class": "^URxvt$"
+                        "class": "^URxvt$",
+						"class": "^Gnome-terminal$"
                        }
                     ],
                     "type": "con"
@@ -141,7 +141,8 @@
                     "percent": 0.7,
                     "swallows": [
                        {
-                       "class": "^URxvt$"
+                       "class": "^URxvt$",
+						"class": "^Gnome-terminal$"
                        }
                     ],
                     "type": "con"
@@ -160,7 +161,8 @@
                     "percent": 0.3,
                     "swallows": [
                        {
-                       "class": "^URxvt$"
+                       "class": "^URxvt$",
+						"class": "^Gnome-terminal$"
                        }
                     ],
                     "type": "con"

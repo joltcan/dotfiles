@@ -31,7 +31,8 @@ font pango:Terminus 9px
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+#bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -189,7 +190,7 @@ exec --no-startup-id "dropbox start"
 exec --no-startup-id autokey-gtk
 
 # Start autocutsel to sync clipboards.
-# Trying urxvt buffers for this and autokey for paste
+# Trying gnome-terminal buffers for this and autokey for paste
 #exec --no-startup-id ~/dotfiles/scripts/autocutsel
 # and lets try clipman to do the right thing
 #exec --no-startup-id "glipper"
@@ -205,15 +206,15 @@ workspace 6 output DP2-2
 #exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-term.json'"
 # start some terminals on certain desktop 2
-exec urxvt
-exec urxvt
-exec urxvt
-exec urxvt
-exec urxvt
-exec urxvt
+exec gnome-terminal
+exec gnome-terminal
+exec gnome-terminal
+exec gnome-terminal
+exec gnome-terminal
+exec gnome-terminal
 exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/workspace-chat.json'"
 exec slack &
-exec urxvt --role irssi &
+exec gnome-terminal --role irssi &
 exec --no-startup-id skype
 exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/workspace-browser.json'"
 exec google-chrome &
