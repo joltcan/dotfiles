@@ -1,4 +1,7 @@
-
+" Install vundle with 
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" then run 
+" vim +PluginInstall +qall
 set nocompatible			" prevent vim from emulating the original vi's bugs and limitations.
 " Required Vundle setup
 filetype off
@@ -10,6 +13,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'tpope/vim-sensible.git'
 Bundle 'tpope/vim-surround.git'
+Plugin 'pearofducks/ansible-vim'
 Plugin 'fatih/vim-go'
 
 
