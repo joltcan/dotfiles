@@ -54,6 +54,8 @@ au BufNewFile,BufRead /etc/httpd/conf.d/* setf apache
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+" 2 space indent when yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 map <silent> <C-t> :NERDTreeToggle<CR>
 
@@ -73,3 +75,5 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 
 "fix hilight color
 hi Visual term=reverse cterm=reverse guibg=Grey
+
+
