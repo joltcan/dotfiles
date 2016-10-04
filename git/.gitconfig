@@ -12,7 +12,7 @@
 #}}}
 # include sendemail config {{{
 [include]
-    path = ~/.git-sendemail
+	path = ~/.git-sendemail
 # }}}
 # color {{{
 [color]
