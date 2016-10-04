@@ -31,4 +31,8 @@ alias rsv='rsync -avP'
 alias gpp='git pull && git push'
 
 alias jävel=git
+alias ms='ssh segum-mgmt-01 -t ssh '
+alias mgmt='ssh mgmt'
+alias sysmgmt='ssh sys-mgmt'
 
+export GOPATH=$HOME/src/go
