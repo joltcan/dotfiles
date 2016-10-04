@@ -182,6 +182,7 @@ bindsym $mod+F7 exec "toggle_screen.sh"
 for_window [window_role="pop-up"] floating enable
 for_window [class="remmina"] floating enable
 for_window [title="AutoKey"] floating enable
+for_window [class="synergy.Synergy"] floating enable
 
 # Exec on startup 
 exec --no-startup-id unity-settings-daemon
