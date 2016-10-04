@@ -13,6 +13,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'plasticboy/vim-markdown.git'
 Bundle 'tpope/vim-sensible.git'
 Bundle 'tpope/vim-surround.git'
+Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'fatih/vim-go'
 
