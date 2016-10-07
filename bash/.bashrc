@@ -23,6 +23,9 @@ fi
 if [ -f ~/dotfiles/bash/uber_prompt.include ]; then
 	. ~/dotfiles/bash/uber_prompt.include
 fi
+if [ -f ~.bashrc.local ]; then
+	. ~/.bashrc.local
+fi
 
 alias l='ls -lahF'
 alias time2date='python -c "import time,sys;  print time.localtime(float(sys.argv[1]))"'
