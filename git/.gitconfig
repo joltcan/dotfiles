@@ -7,13 +7,12 @@
 #}}}
 # user {{{
 [user]
-    email = f@mekk.com
-    name = Fredrik Lundhag
+	name = Fredrik Lundhag
 
 #}}}
 # include sendemail config {{{
 [include]
-    path = ~/.git-sendemail
+	path = ~/.git-sendemail
 # }}}
 # color {{{
 [color]
