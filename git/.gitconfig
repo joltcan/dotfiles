@@ -8,6 +8,7 @@
 # user {{{
 [user]
 	name = Fredrik Lundhag
+	email = f@mekk.com
 
 #}}}
 # include sendemail config {{{

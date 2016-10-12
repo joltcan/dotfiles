@@ -4,38 +4,32 @@
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+# Source local as well
+if [ -f ~.bashrc.local ]; then
+	. ~/.bashrc.local
+fi
+if [ -f ~/.bash_git ]; then
+	. ~/.bash_git
+fi
+if [ -f ~/.uber_prompt.include ]; then
+	. ~/.uber_prompt.include
+fi
 
-# User specific aliases and functions
-alias rsdel='rsync --archive --one-file-system --verbose --stats --progress --delete'
-alias rs='rsync --archive --one-file-system --verbose --stats --progress'
-alias mkpasswd='tr -dc a-km-np-zA-HJ-NP-Z2-9 < /dev/urandom 2>/dev/null | head -c 16 ; echo'
-alias cal='cal -3 -m'
-alias vi=vim
-
+eval $(dircolors -b)
 _rev="\[$(tput rev 2> /dev/null)\]"
 _reset="\[$(tput sgr0 2> /dev/null)\]"
 PS1="[${_rev}\u@\h${_reset}]\w\\$ "
 
-eval $(dircolors -b)
-if [ -f ~/dotfiles/git/.bash_git ]; then
-	. ~/dotfiles/git/.bash_git
-fi
-if [ -f ~/dotfiles/bash/uber_prompt.include ]; then
-	. ~/dotfiles/bash/uber_prompt.include
-fi
-if [ -f ~.bashrc.local ]; then
-	. ~/.bashrc.local
-fi
-
-alias l='ls -lahF'
-alias time2date='python -c "import time,sys;  print time.localtime(float(sys.argv[1]))"'
-alias sping='ping ping.sunet.se'
-alias rsv='rsync -avP'
+# User specific aliases and functions
+alias cal='cal -3 -m'
 alias gpp='git pull && git push'
-
 alias jävel=git
-alias ms='ssh segum-mgmt-01 -t ssh '
-alias mgmt='ssh mgmt'
-alias sysmgmt='ssh sys-mgmt'
-
-export GOPATH=$HOME/src/go
+alias l='ls -lahF'
+alias mkpasswd='tr -dc a-km-np-zA-HJ-NP-Z2-9 < /dev/urandom 2>/dev/null | head -c 16 ; echo'
+alias rsv='rsync -avP'
+alias rsdel='rsync --archive --one-file-system --verbose --stats --progress --delete'
+alias rs='rsync --archive --one-file-system --verbose --stats --progress'
+alias screen='tmux'
+alias sping='ping ping.sunet.se'
+alias time2date='python -c "import time,sys;  print time.localtime(float(sys.argv[1]))"'
+alias vi=vim
