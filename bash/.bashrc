@@ -29,7 +29,6 @@ alias mkpasswd='tr -dc a-km-np-zA-HJ-NP-Z2-9 < /dev/urandom 2>/dev/null | head -
 alias rsv='rsync -avP'
 alias rsdel='rsync --archive --one-file-system --verbose --stats --progress --delete'
 alias rs='rsync --archive --one-file-system --verbose --stats --progress'
-alias screen='tmux'
 alias sping='ping ping.sunet.se'
 alias time2date='python -c "import time,sys;  print time.localtime(float(sys.argv[1]))"'
 alias vi=vim
