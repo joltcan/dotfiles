@@ -1,20 +1,20 @@
 # core {{{
 [core]
     editor = /usr/bin/vim
-    excludesfile = /Users/np/.gitignore_global
+    excludesfile = ~/.gitignore_global
     pager=less -x4
 
 #}}}
 # user {{{
 [user]
 	name = Fredrik Lundhag
-	email = f@mekk.com
-
 #}}}
 # include sendemail config {{{
+# just add [user] and email to the file below
 [include]
 	path = ~/.git-sendemail
 # }}}
+
 # color {{{
 [color]
     branch = auto
