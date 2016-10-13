@@ -18,8 +18,8 @@ if (xrandr | grep "$EXT1 disconnected"); then
     # lock just in case
 	xautolock -locknow
 else
-	xrandr --output $EXT1 --auto --primary --output $EXT2 --auto --left-of $EXT1
-	#xrandr --output $IN --auto --output $EXT1 --auto --left-of $IN --primary
-	#xrandr --output $EXT2 --auto --left-of $EXT1
+	xrandr --output $IN --off
+	#xrandr --output $EXT1 --auto --primary --output $EXT2 --auto --left-of $EXT1
+	xrandr --output $EXT1 --auto --primary --output $EXT2 --auto --pos 0x300
 fi
 
