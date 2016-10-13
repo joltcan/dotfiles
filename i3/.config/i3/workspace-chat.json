@@ -8,7 +8,7 @@
     "type": "con",
     "nodes": [
         {
-            // splith split container with 2 children
+            // splitv split container with 2 children
             "border": "normal",
             "floating": "auto_off",
             "layout": "splith",
@@ -25,7 +25,7 @@
                        "x": 2304,
                        "y": 108
                     },
-                    "name": "Slack - mmo",
+                    "name": "Slack",
                     "percent": 0.6,
                     "swallows": [
                        {
@@ -35,7 +35,7 @@
                     "type": "con"
                 },
                 {
-                    // splitv split container with 2 children
+                    // splith split container with 2 children
                     "border": "normal",
                     "floating": "auto_off",
                     "layout": "splitv",
@@ -52,7 +52,7 @@
                                "x": 3074,
                                "y": 653
                             },
-                            "name": "Sara - Skype™",
+                            "name": "Skype™",
                             "percent": 0.5,
                             "swallows": [
                                {
@@ -71,11 +71,11 @@
                                "x": 0,
                                "y": 0
                             },
-                            "name": "Martin Larsson - voiptestcall",
+                            "name": "browser",
                             "percent": 0.5,
                             "swallows": [
                                {
-                               "class": "^Pidgin$"
+                               "class": "^google-chrome.google-chrome$"
                                }
                             ],
                             "type": "con"
