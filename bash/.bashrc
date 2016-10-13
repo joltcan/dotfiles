@@ -25,6 +25,7 @@ alias cal='cal -3 -m'
 alias gpp='git pull && git push'
 alias jävel=git
 alias l='ls -lahF'
+alias ll='l'
 alias mkpasswd='tr -dc a-km-np-zA-HJ-NP-Z2-9 < /dev/urandom 2>/dev/null | head -c 16 ; echo'
 alias rsv='rsync -avP'
 alias rsdel='rsync --archive --one-file-system --verbose --stats --progress --delete'

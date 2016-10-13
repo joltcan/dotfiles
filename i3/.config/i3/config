@@ -234,3 +234,10 @@ for_window [id="5400004"] move to scratchpad
 for_window [class="1Password.exe"] move to scratchpad
 exec --no-startup-id wine "C:\Program Files (x86)\1Password 4\Agile1pAgent.exe" &
 
+# set some colors
+#client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
+#client.focused_inactive #333333 #5F676A #ffffff #484e50
+#client.unfocused        #333333 #424242 #888888 #292d2e 
+#client.urgent           #C10004 #900000 #ffffff #900000
+
+
