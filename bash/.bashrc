@@ -32,4 +32,5 @@ alias rsdel='rsync --archive --one-file-system --verbose --stats --progress --de
 alias rs='rsync --archive --one-file-system --verbose --stats --progress'
 alias sping='ping ping.sunet.se'
 alias time2date='python -c "import time,sys;  print time.localtime(float(sys.argv[1]))"'
+alias upgrade='sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get clean'
 alias vi=vim

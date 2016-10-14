@@ -168,7 +168,7 @@ bindsym $mod+Control+Shift+k focus parent, focus parent, focus parent, focus par
 bar {
         #status_command i3status
 		status_command i3blocks -c ~/dotfiles/i3/.config/i3/i3blocks.conf
-		tray_output DP2-2
+		tray_output DP2-1
 		wheel_up_cmd nop
 		wheel_down_cmd nop
 }
@@ -182,7 +182,8 @@ bindsym $mod+F7 exec "toggle_screen.sh"
 for_window [window_role="pop-up"] floating enable
 for_window [class="remmina"] floating enable
 for_window [title="AutoKey"] floating enable
-for_window [class="synergy.Synergy"] floating enable
+for_window [title="Synergy"] floating enable
+for_window [title="Nitrogen"] floating enable
 
 # Exec on startup 
 exec --no-startup-id unity-settings-daemon
@@ -201,8 +202,7 @@ workspace 1 output DP2-1
 workspace 2 output DP2-1
 workspace 3 output DP2-2
 workspace 4 output DP2-2
-workspace 5 output DP2-1
-workspace 6 output DP2-1
+workspace 5 output DP2-2
 
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-term.json'"
 # start some terminals on certain desktop 2
@@ -233,10 +233,11 @@ for_window [id="5400004"] move to scratchpad
 for_window [class="1Password.exe"] move to scratchpad
 exec --no-startup-id wine "C:\Program Files (x86)\1Password 4\Agile1pAgent.exe" &
 
+# set background
+exec --no-startup-id nitrogen --restore
 # set some colors
 #client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
 #client.focused_inactive #333333 #5F676A #ffffff #484e50
 #client.unfocused        #333333 #424242 #888888 #292d2e 
 #client.urgent           #C10004 #900000 #ffffff #900000
-
 
