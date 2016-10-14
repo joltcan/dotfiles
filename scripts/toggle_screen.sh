@@ -20,6 +20,6 @@ if (xrandr | grep "$EXT1 disconnected"); then
 else
 	xrandr --output $IN --off
 	#xrandr --output $EXT1 --auto --primary --output $EXT2 --auto --left-of $EXT1
-	xrandr --output $EXT1 --auto --primary --output $EXT2 --auto --pos 0x300
+	xrandr --output $EXT1 --auto --primary --output $EXT2 --auto --pos 2560x320
 fi
 

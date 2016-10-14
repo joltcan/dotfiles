@@ -5,7 +5,7 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 # Source local as well
-if [ -f ~.bashrc.local ]; then
+if [ -f ~/.bashrc.local ]; then
 	. ~/.bashrc.local
 fi
 if [ -f ~/.bash_git ]; then
