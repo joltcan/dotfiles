@@ -1,173 +1,175 @@
 // vim:ts=4:sw=4:et
 {
-    // splith split container with 3 children
+    // splitv split container with 2 children
     "border": "normal",
     "floating": "auto_off",
-    "layout": "splith",
-    "percent": 1,
+    "layout": "splitv",
+    "percent": 0.333333333333333,
     "type": "con",
     "nodes": [
         {
-            // splitv split container with 2 children
             "border": "normal",
+            "current_border_width": 2,
             "floating": "auto_off",
-            "layout": "splitv",
-            "percent": 0.333333333333333,
-            "type": "con",
-            "nodes": [
-                {
-                    "border": "normal",
-                    "current_border_width": 2,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 290,
-                       "width": 562,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "jolt@SEMALL0404: ~",
-                    "percent": 0.7,
-                    "swallows": [
-                       {
-                       "class": "^URxvt$",
-                       "class": "^Gnome-terminal$"
-                    ],
-                    "type": "con"
-                },
-                {
-                    // splith split container with 1 children
-                    "border": "normal",
-                    "floating": "auto_off",
-                    "layout": "splith",
-                    "percent": 0.3,
-                    "type": "con",
-                    "nodes": [
-                        {
-                            "border": "normal",
-                            "current_border_width": 2,
-                            "floating": "auto_off",
-                            "geometry": {
-                               "height": 290,
-                               "width": 562,
-                               "x": 0,
-                               "y": 0
-                            },
-                            "name": "jolt@SEMALL0404: ~",
-                            "percent": null,
-                            "swallows": [
-                               {
-                                "class": "^Gnome-terminal$",
-                                "class": "^URxvt$"
-                               // "instance": "^urxvt$",
-                               // "title": "^jolt\\@SEMALL0404\\:\\ \\~$",
-                               // "transient_for": "^$"
-                               }
-                            ],
-                            "type": "con"
-                        }
-                    ]
-                }
-            ]
+            "geometry": {
+               "height": 290,
+               "width": 482,
+               "x": 0,
+               "y": 0
+            },
+            "name": "config (~/dotfiles/i3/.config/i3) - VIM",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Gnome\\-terminal$",
+               // "instance": "^gnome\\-terminal\\-server$",
+               // "title": "^config\\ \\(\\~\\/dotfiles\\/i3\\/\\.config\\/i3\\)\\ \\-\\ VIM$",
+               // "transient_for": "^$",
+                "window_role": "i3-term"
+               }
+            ],
+            "type": "con"
         },
         {
-            // splitv split container with 2 children
             "border": "normal",
+            "current_border_width": 2,
             "floating": "auto_off",
-            "layout": "splitv",
-            "percent": 0.333333333333333,
-            "type": "con",
-            "nodes": [
-                {
-                    "border": "normal",
-                    "current_border_width": 2,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 290,
-                       "width": 562,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "jolt@SEMALL0404: ~",
-                    "percent": 0.7,
-                    "swallows": [
-                       {
-                       "class": "^URxvt$",
-                       "class": "^Gnome-terminal$"
-                       }
-                    ],
-                    "type": "con"
-                },
-                {
-                    "border": "normal",
-                    "current_border_width": 2,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 290,
-                       "width": 562,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "jolt@SEMALL0404: ~",
-                    "percent": 0.3,
-                    "swallows": [
-                       {
-                        "class": "^URxvt$",
-						"class": "^Gnome-terminal$"
-                       }
-                    ],
-                    "type": "con"
-                }
-            ]
+            "geometry": {
+               "height": 290,
+               "width": 482,
+               "x": 0,
+               "y": 0
+            },
+            "name": "jolt@SEMALL0404: ~",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Gnome\\-terminal$",
+                "window_role": "i3-term"
+               // "instance": "^gnome\\-terminal\\-server$",
+               // "title": "^jolt\\@SEMALL0404\\:\\ \\~$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-e7ecb76f\\-b4bb\\-41fa\\-8db4\\-188600bba1aa$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.333333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 290,
+               "width": 482,
+               "x": 0,
+               "y": 0
+            },
+            "name": "jolt@SEMALL0404: ~",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Gnome\\-terminal$",
+                "window_role": "i3-term"
+               // "instance": "^gnome\\-terminal\\-server$",
+               // "title": "^jolt\\@SEMALL0404\\:\\ \\~$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-22e76c0c\\-6037\\-49ef\\-9f86\\-77d9fe60777c$"
+               }
+            ],
+            "type": "con"
         },
         {
-            // splitv split container with 2 children
             "border": "normal",
+            "current_border_width": 2,
             "floating": "auto_off",
-            "layout": "splitv",
-            "percent": 0.333333333333333,
-            "type": "con",
-            "nodes": [
-                {
-                    "border": "normal",
-                    "current_border_width": 2,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 290,
-                       "width": 562,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "rabbit-carbon-passthrough.go (~/src/go/src/go-passthrough) - VIM",
-                    "percent": 0.7,
-                    "swallows": [
-                       {
-                       "class": "^URxvt$",
-						"class": "^Gnome-terminal$"
-                       }
-                    ],
-                    "type": "con"
-                },
-                {
-                    "border": "normal",
-                    "current_border_width": 2,
-                    "floating": "auto_off",
-                    "geometry": {
-                       "height": 290,
-                       "width": 562,
-                       "x": 0,
-                       "y": 0
-                    },
-                    "name": "jolt@SEMALL0404: ~",
-                    "percent": 0.3,
-                    "swallows": [
-                       {
-                       "class": "^URxvt$",
-						"class": "^Gnome-terminal$"
-                       }
-                    ],
-                    "type": "con"
-                }
-            ]
+            "geometry": {
+               "height": 290,
+               "width": 482,
+               "x": 0,
+               "y": 0
+            },
+            "name": "jolt@SEMALL0404: ~/.config/i3",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Gnome\\-terminal$",
+                "window_role": "i3-term"
+               // "instance": "^gnome\\-terminal\\-server$",
+               // "title": "^jolt\\@SEMALL0404\\:\\ \\~\\/\\.config\\/i3$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-80dfbab7\\-85c7\\-4e7e\\-84a1\\-4809c4c2011e$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.333333333333333,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 290,
+               "width": 482,
+               "x": 0,
+               "y": 0
+            },
+            "name": "frelun@sys-mgmt-01: ~/src/ansible",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Gnome\\-terminal$",
+                "window_role": "i3-term"
+               // "instance": "^gnome\\-terminal\\-server$",
+               // "title": "^frelun\\@sys\\-mgmt\\-01\\:\\ \\~\\/src\\/ansible$",
+               // "transient_for": "^$",
+               // "window_role": "^gnome\\-terminal\\-window\\-6e20c173\\-45a8\\-49ae\\-a978\\-289128b16361$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 696,
+               "width": 849,
+               "x": 1709,
+               "y": 727
+            },
+            "name": "Slack - Verisure",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^Slack$"
+               // "instance": "^slack$",
+               // "title": "^Slack\\ \\-\\ Verisure$",
+               // "transient_for": "^$",
+               // "window_role": "^browser\\-window$"
+               }
+            ],
+            "type": "con"
         }
     ]
 }
