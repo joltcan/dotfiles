@@ -22,35 +22,4 @@
     "type": "con"
 }
 
-{
-    "border": "normal",
-    "floating": "auto_off",
-    "layout": "splith",
-    "percent": 0.5,
-    "type": "con",
-    "nodes": [
-        {
-            "border": "normal",
-            "current_border_width": 2,
-            "floating": "auto_off",
-            "geometry": {
-               "height": 600,
-               "width": 800,
-               "x": 0,
-               "y": 0
-            },
-            "name": "Spotify",
-            "percent": 1,
-            "swallows": [
-               {
-                "class": "^Spotify$",
-                "instance": "^spotify$",
-                "title": "^Spotify$",
-                "transient_for": "^$"
-               }
-            ],
-            "type": "con"
-        }
-    ]
-}
 

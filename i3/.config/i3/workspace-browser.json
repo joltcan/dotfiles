@@ -9,11 +9,11 @@
        "x": 2,
        "y": 18
     },
-    "name": "Chromium",
+    "name": "Chrome",
     "percent": 1,
     "swallows": [
        {
-        "window_role": "^browser$"
+        "window_role": "^browser$",
        }
     ],
     "type": "con"

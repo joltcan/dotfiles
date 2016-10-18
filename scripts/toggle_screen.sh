@@ -22,3 +22,5 @@ else
 	xrandr --output $EXT1 --auto --primary --output $EXT2 --auto --pos 2560x280
 fi
 
+nitrogen --restore
+

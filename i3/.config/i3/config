@@ -166,7 +166,6 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym $mod+Control+Shift+k focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, kill
 
 bar {
-        #status_command i3status
 		status_command i3blocks -c ~/dotfiles/i3/.config/i3/i3blocks.conf
 		tray_output primary 
 		wheel_up_cmd nop
@@ -174,7 +173,6 @@ bar {
 }
 
 # Lock
-#bindsym Mod1+Ctrl+l exec ~/dotfiles/scripts/lock_script.sh
 bindsym Mod1+Ctrl+l exec xautolock -locknow
 bindsym $mod+F7 exec "toggle_screen.sh"
 
@@ -185,12 +183,11 @@ for_window [title="AutoKey"] floating enable
 for_window [title="Synergy"] floating enable
 for_window [title="Nitrogen"] floating enable
 for_window [title="Unlock Login Keyring"] floating enable
+for_window [class="seahorse"] floating enable
 
 # Exec on startup 
 # set background
-exec --no-startup-id nitrogen --restore
 exec --no-startup-id unity-settings-daemon
-exec --no-startup-id dbus-send --session --print-reply=literal --dest=org.gnome.SessionManager "/org/gnome/SessionManager" org.gnome.SessionManager.RegisterClient "string:i3" "string:$DESKTOP_AUTOSTART_ID"
 exec --no-startup-id xautolock -locker "/usr/local/bin/lock_script.sh" -time 5 -corners ++-0 -cornerdelay 1 -cornerredelay 5 -cornersize 5 &
 exec --no-startup-id "dropbox start"
 exec --no-startup-id autokey-gtk
@@ -215,8 +212,7 @@ exec --no-startup-id google-chrome
 exec --no-startup-id slack
 exec --no-startup-id "i3-msg 'workspace 4; append_layout ~/.config/i3/workspace-chat.json'"
 # skype font size is in .config/Trolltech.conf
-exec --no-startup-id skype
-exec --no-startup-id spotify
+#exec --no-startup-id skype
 
 # Lagging keys on keyboard, not sure if this is helps yet.
 exec --no-startup-id sudo powernap-action --disable usb_autosuspend &
@@ -229,8 +225,8 @@ bindsym $mod+Shift+minus move scratchpad
 for_window [id="5400004"] move to scratchpad
 for_window [class="1Password.exe"] move to scratchpad
 exec --no-startup-id wine "C:\Program Files (x86)\1Password 4\Agile1pAgent.exe"
-
-exec /usr/local/bin/toggle_screen.sh
+exec --no-startup-id synergy
+exec --no-startup-id xfce4-clipman
 
 # set some colors
 #client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
