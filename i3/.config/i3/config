@@ -188,7 +188,7 @@ for_window [class="seahorse"] floating enable
 # Exec on startup 
 # set background
 exec --no-startup-id unity-settings-daemon
-exec --no-startup-id xautolock -locker "/usr/local/bin/lock_script.sh" -time 5 -corners ++-0 -cornerdelay 1 -cornerredelay 5 -cornersize 5 &
+exec --no-startup-id xautolock -locker "/usr/local/bin/lock_script.sh" -time 5 -corners ++-0 -cornerdelay 1 -cornerredelay 5 -cornersize 5  -detectsleep
 exec --no-startup-id "dropbox start"
 exec --no-startup-id autokey-gtk
 exec --no-startup-id nm-applet
@@ -227,6 +227,7 @@ for_window [class="1Password.exe"] move to scratchpad
 exec --no-startup-id wine "C:\Program Files (x86)\1Password 4\Agile1pAgent.exe"
 exec --no-startup-id synergy
 exec --no-startup-id xfce4-clipman
+exec --no-startup-id toggle_screen.sh
 
 # set some colors
 #client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
