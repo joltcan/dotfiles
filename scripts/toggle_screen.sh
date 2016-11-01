@@ -19,7 +19,7 @@ if (xrandr | grep "$EXT1 disconnected"); then
 	xautolock -locknow
 else
 	xrandr --output $IN --off
-	xrandr --output $EXT1 --auto --primary --output $EXT2 --auto --pos 2560x280
+	xrandr --output $EXT1 --auto --primary --pos 0x120 --output $EXT2 --auto --pos 2560x0 --rotate left
 fi
 
 nitrogen --restore
