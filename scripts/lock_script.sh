@@ -4,7 +4,7 @@ revert() {
 	xset dpms 0 0 0
 }
 trap revert SIGHUP SIGINT SIGTERM
-xset +dpms dpms 5 5 5
+xset +dpms dpms 60 60 300
 
 #xset -display :0.0 dpms 400 500 600
 # pause spotify (sp from https://gist.github.com/wandernauta/6800547 )
