@@ -14,6 +14,7 @@
     "swallows": [
        {
         "window_role": "^browser$",
+        "class": "google-chrome"
        }
     ],
     "type": "con"
