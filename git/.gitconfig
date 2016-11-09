@@ -8,12 +8,9 @@
 # user {{{
 [user]
 	name = Fredrik Lundhag
+# email needs to be set by
+# export GIT_AUTHOR_EMAIL=f@mekk.com
 #}}}
-# include sendemail config {{{
-# just add [user] and email to the file below
-[include]
-	path = ~/.git-sendemail
-# }}}
 
 # color {{{
 [color]
