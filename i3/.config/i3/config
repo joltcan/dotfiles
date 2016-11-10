@@ -229,6 +229,10 @@ exec --no-startup-id synergy
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id toggle_screen.sh
 
+# bluetooth permissions in dbus was hard to find. Add user to group bluetooth
+# and <allow send_type="method_call"/> to root and bluetooth
+exec --no-startup-id blueman-applet
+
 # set some colors
 #client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
 #client.focused_inactive #333333 #5F676A #ffffff #484e50
