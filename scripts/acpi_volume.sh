@@ -14,23 +14,15 @@
 
 case $1 in
 "up")
-	amixer sset Master 10+
+	su -c "pactl set-sink-volume 0 +6%  && pactl set-sink-mute 0 0" jolt
+
 	;;
 "down")
-	amixer sset Master 10-
+	su -c "pactl set-sink-volume 0 -6%  && pactl set-sink-mute 0 0" jolt
+
 	;;
 "mute")
-    # ugly workaround since amixer Master mute will mute both master and Headphone/speaker
-    # and toggling them in different order is confusing
-    if amixer get Master |grep -v grep | grep "off"; then
-        amixer -q sset Master on 
-        amixer -q sset Speaker on
-        amixer -q sset Headphone on
-    else
-        amixer -q sset Master off
-        amixer -q sset Speaker off
-        amixer -q sset Headphone off
-    fi
+	su -c "amixer -q -D pulse sset Master toggle" jolt
 	;;
 *)
 	;;
