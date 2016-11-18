@@ -184,6 +184,7 @@ for_window [title="Synergy"] floating enable
 for_window [title="Nitrogen"] floating enable
 for_window [title="Unlock Login Keyring"] floating enable
 for_window [class="seahorse"] floating enable
+for_window [class="1Password.exe" ] move to scratchpad
 
 # Exec on startup 
 exec --no-startup-id unity-settings-daemon
@@ -220,11 +221,11 @@ bindsym $mod+shift+s scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
 # 1Password and agent
-for_window [id="5400004"] move to scratchpad
-for_window [class="1Password.exe"] move to scratchpad
 exec --no-startup-id wine "C:\Program Files (x86)\1Password 4\Agile1pAgent.exe"
 exec --no-startup-id synergy
 exec --no-startup-id xfce4-clipman
+exec --no-startup-id pidgin
+
 
 # bluetooth permissions in dbus was hard to find. Add user to group bluetooth
 # and <allow send_type="method_call"/> to root and bluetooth
