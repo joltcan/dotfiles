@@ -1,0 +1,6 @@
+[Map Meta Keys]
+Super_L = Meta_L
+Super_R = Meta_R
+Meta_L = Super_L
+Meta_R = Super_R
+asterisk = exclamdown
