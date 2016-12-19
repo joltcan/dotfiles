@@ -22,5 +22,5 @@ else
 	xrandr --output $EXT1 --auto --primary --pos 0x120 --output $EXT2 --auto --pos 2560x0 --rotate left
 fi
 
-nitrogen --restore
+DISPLAY=:0.0 su jolt -c "nitrogen --restore"
 
