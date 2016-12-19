@@ -194,6 +194,7 @@ exec --no-startup-id "dropbox start"
 exec --no-startup-id autokey-gtk
 exec --no-startup-id nm-applet
 exec --no-startup-id toggle_screen.sh
+exec --no-startup-id setxkbmap -option ctrl:nocaps # make CAPS-lock CTRL
 
 # bind workspaces to the right monitors
 workspace 1 output DP2-1
