@@ -41,10 +41,9 @@ set winminheight=1			" ok to squash windows
 "set backup                 " enable creation of backup files
 set incsearch				" makes vim search as soon as you start typing (can be slow)
 set expandtab				" converts tabs/indents to normal spaces
-"set bg=dark				" make colors more visible on dark themes
+set bg=dark				" make colors more visible on dark themes
 
 "set listchars=eol:$,tab:>-,trail:•,extends:»,precedes:«,nbsp:%
-:let mapleader = ';'
 :let mapleader = "\<Space>"
 map <silent> <Leader>p :set invpaste<CR>
 map <silent> <Leader>l :set invlist<CR>
