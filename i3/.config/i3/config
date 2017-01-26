@@ -175,7 +175,7 @@ bar {
 
 # Lock
 bindsym Mod1+Ctrl+l exec xautolock -locknow
-bindsym $mod+F7 exec "toggle_screen.sh"
+bindsym $mod+F9 exec "toggle_screen.sh"
 
 # Floating windows
 #for_window [window_role="pop-up"] floating enable
@@ -195,7 +195,6 @@ exec --no-startup-id "dropbox start"
 exec --no-startup-id autokey-gtk
 exec --no-startup-id nm-applet
 exec --no-startup-id toggle_screen.sh
-exec --no-startup-id setxkbmap -option ctrl:nocaps # make CAPS-lock CTRL
 exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
 # bind workspaces to the right monitors
@@ -216,23 +215,21 @@ exec --no-startup-id slack
 # skype font size is in .config/Trolltech.conf
 #exec --no-startup-id skype
 
-# Lagging keys on keyboard, not sure if this is helps yet.
-#exec --no-startup-id sudo powernap-action --disable usb_autosuspend &
-
 # scratchpad
 bindsym $mod+shift+s scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
 # 1Password and agent
 exec --no-startup-id wine "C:\Program Files (x86)\1Password 4\Agile1pAgent.exe"
-exec --no-startup-id synergy
+#exec --no-startup-id synergy
 exec --no-startup-id xfce4-clipman
 exec --no-startup-id pidgin
 
 
 # bluetooth permissions in dbus was hard to find. Add user to group bluetooth
 # and <allow send_type="method_call"/> to root and bluetooth
-exec --no-startup-id blueman-applet
+#exec --no-startup-id blueman-applet
+# disabled bluetooth in /etc/rc.local
 
 # set some colors
 #client.focused          #3F8AC2 #096BAA #00BAA7 #00DA8E
