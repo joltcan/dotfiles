@@ -28,6 +28,11 @@ else
     echo 'on' | sudo tee '/sys/bus/usb/devices/1-4.4.2/power/control' # mouse
 fi
 
+if [ "$0" == "/usr/local/sbin/thinkpad-dock.sh" ]; then
+    if [ "$1" == "undocked" ]; then sudo tlp bat >> $LOG ; fi
+    if [ "$1" == "docked" ]; then sudo tlp ac >> $LOG;  fi
+fi
+
 if [ "$USER" == "root" ] ; then
     DISPLAY=:0.0 su jolt -c "nitrogen --restore"
 else
