@@ -194,7 +194,6 @@ exec --no-startup-id pnmixer
 exec --no-startup-id "dropbox start"
 exec --no-startup-id autokey-gtk
 exec --no-startup-id nm-applet
-exec --no-startup-id toggle_screen.sh
 exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' # caps is now escape
 
 # bind workspaces to the right monitors
@@ -213,7 +212,6 @@ exec --no-startup-id gnome-terminal --role=i3-term
 exec --no-startup-id google-chrome 
 exec --no-startup-id slack
 # skype font size is in .config/Trolltech.conf
-#exec --no-startup-id skype
 
 # scratchpad
 bindsym $mod+shift+s scratchpad show
