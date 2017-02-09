@@ -13,7 +13,20 @@ IN="eDP1"
 EXT1="DP2-1"
 EXT2="DP2-2"
 LOG=/tmp/toggle.log
-#export DISPLAY=:0.0
+export DISPLAY=:0.0
+
+if [ "$USER" == "root" ] ; then
+    if [ "$1" == "undocked" ]; then tlp bat >> $LOG ; fi
+    if [ "$1" == "docked" ]; then 
+        tlp ac >> $LOG
+        # fix for usb stuff when moving from laptop only to dock
+        echo 'on' | tee '/sys/bus/usb/devices/1-4.3/power/control' # keyboard
+        echo 'on' | tee '/sys/bus/usb/devices/1-4.4.2/power/control' # mouse
+    fi
+    su jolt -c "nitrogen --restore"
+else
+    nitrogen --restore
+fi
 
 if (xrandr |grep "$EXT1 disconnected" >/dev/null ); then
     echo "$(date ) internal" >> $LOG
@@ -23,18 +36,6 @@ else
     echo "$(date) external" >> $LOG 2>&1
 	xrandr --output $IN --off >> $LOG 2>&1
 	xrandr --output $EXT1 --auto --primary --pos 0x120 --output $EXT2 --auto --pos 2560x0 --rotate left >> $LOG 2>&1
-    # fix for usb stuff when moving from laptop only to dock
-    echo 'on' | sudo tee '/sys/bus/usb/devices/1-4.3/power/control' # keyboard
-    echo 'on' | sudo tee '/sys/bus/usb/devices/1-4.4.2/power/control' # mouse
 fi
 
-if [ "$0" == "/usr/local/sbin/thinkpad-dock.sh" ]; then
-    if [ "$1" == "undocked" ]; then sudo tlp bat >> $LOG ; fi
-    if [ "$1" == "docked" ]; then sudo tlp ac >> $LOG;  fi
-fi
 
-if [ "$USER" == "root" ] ; then
-    DISPLAY=:0.0 su jolt -c "nitrogen --restore"
-else
-    nitrogen --restore
-fi
