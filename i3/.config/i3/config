@@ -178,7 +178,6 @@ bindsym Mod1+Ctrl+l exec xautolock -locknow
 bindsym $mod+F9 exec "toggle_screen.sh"
 
 # Floating windows
-#for_window [window_role="pop-up"] floating enable
 for_window [class="remmina"] floating enable
 for_window [title="AutoKey"] floating enable
 for_window [title="Synergy"] floating enable
@@ -210,7 +209,7 @@ exec --no-startup-id gnome-terminal --role=i3-term
 exec --no-startup-id gnome-terminal --role=i3-term
 exec --no-startup-id gnome-terminal --role=i3-term
 exec --no-startup-id google-chrome 
-exec --no-startup-id slack
+exec --no-startup-id franz
 # skype font size is in .config/Trolltech.conf
 
 # scratchpad

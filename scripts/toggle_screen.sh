@@ -1,32 +1,12 @@
 #!/bin/bash
 # Fredrik Lundhag, f@mekk.com
 #
-# Either run this script manually, or use it as an event in /etc/acpi/events:
-# Your dock station event needs to be captured with acpi_listen, and it will
-# probably differ from mine. Here is my /etc/acpi/events/lenovo-t460-undock:
-# event=ibm/hotkey LEN0068:00 00000080 *
-# action=/usr/local/bin/toggle_screen.sh
-# This file is then symlinked as above ^
-
 # Screen names, as shown with xrandr
 IN="eDP1"
 EXT1="DP2-1"
 EXT2="DP2-2"
 LOG=/tmp/toggle.log
 export DISPLAY=:0.0
-
-if [ "$USER" == "root" ] ; then
-    if [ "$1" == "undocked" ]; then tlp bat >> $LOG ; fi
-    if [ "$1" == "docked" ]; then 
-        tlp ac >> $LOG
-        # fix for usb stuff when moving from laptop only to dock
-        echo 'on' | tee '/sys/bus/usb/devices/1-4.3/power/control' # keyboard
-        echo 'on' | tee '/sys/bus/usb/devices/1-4.4.2/power/control' # mouse
-    fi
-    su jolt -c "nitrogen --restore"
-else
-    nitrogen --restore
-fi
 
 if (xrandr |grep "$EXT1 disconnected" >/dev/null ); then
     echo "$(date ) internal" >> $LOG
@@ -38,4 +18,5 @@ else
 	xrandr --output $EXT1 --auto --primary --pos 0x120 --output $EXT2 --auto --pos 2560x0 --rotate left >> $LOG 2>&1
 fi
 
+nitrogen --restore
 

@@ -6,7 +6,6 @@ revert() {
 trap revert SIGHUP SIGINT SIGTERM
 xset +dpms dpms 60 60 300
 
-#xset -display :0.0 dpms 400 500 600
 # pause spotify (sp from https://gist.github.com/wandernauta/6800547 )
 #sp pause
 
@@ -18,9 +17,4 @@ then
 fi
 /usr/local/bin/lock -p -t "" -- scrot -z
 revert
-
-if [ "$USER" == "root" ]; then
-    su -c 'xmodmap -e "clear Lock" -e "keycode 0x42 = Escape"' jolt
-else
-    xmodmap -e "clear Lock" -e "keycode 0x42 = Escape"
-fi
+i3-msg reload
