@@ -18,3 +18,4 @@ fi
 /usr/local/bin/lock -p -t "" -- scrot -z
 revert
 i3-msg reload
+xmodmap -e "clear Lock" -e "keycode 0x42 = Escape"

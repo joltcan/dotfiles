@@ -1,6 +1,4 @@
-// vim:ts=4:sw=4:et
 {
-    // splitv split container with 2 children
     "border": "normal",
     "floating": "auto_off",
     "layout": "splitv",
@@ -22,9 +20,6 @@
             "swallows": [
                {
                 "class": "^Gnome\\-terminal$",
-               // "instance": "^gnome\\-terminal\\-server$",
-               // "title": "^config\\ \\(\\~\\/dotfiles\\/i3\\/\\.config\\/i3\\)\\ \\-\\ VIM$",
-               // "transient_for": "^$",
                 "window_role": "i3-term"
                }
             ],
@@ -46,19 +41,14 @@
                {
                 "class": "^Gnome\\-terminal$",
                 "window_role": "i3-term"
-               // "instance": "^gnome\\-terminal\\-server$",
-               // "title": "^jolt\\@SEMALL0404\\:\\ \\~$",
-               // "transient_for": "^$",
-               // "window_role": "^gnome\\-terminal\\-window\\-e7ecb76f\\-b4bb\\-41fa\\-8db4\\-188600bba1aa$"
                }
             ],
             "type": "con"
         }
     ]
-}
+},
 
 {
-    // splitv split container with 2 children
     "border": "normal",
     "floating": "auto_off",
     "layout": "splitv",
@@ -81,10 +71,6 @@
                {
                 "class": "^Gnome\\-terminal$",
                 "window_role": "i3-term"
-               // "instance": "^gnome\\-terminal\\-server$",
-               // "title": "^jolt\\@SEMALL0404\\:\\ \\~$",
-               // "transient_for": "^$",
-               // "window_role": "^gnome\\-terminal\\-window\\-22e76c0c\\-6037\\-49ef\\-9f86\\-77d9fe60777c$"
                }
             ],
             "type": "con"
@@ -105,16 +91,12 @@
                {
                 "class": "^Gnome\\-terminal$",
                 "window_role": "i3-term"
-               // "instance": "^gnome\\-terminal\\-server$",
-               // "title": "^jolt\\@SEMALL0404\\:\\ \\~\\/\\.config\\/i3$",
-               // "transient_for": "^$",
-               // "window_role": "^gnome\\-terminal\\-window\\-80dfbab7\\-85c7\\-4e7e\\-84a1\\-4809c4c2011e$"
                }
             ],
             "type": "con"
         }
     ]
-}
+},
 
 {
     "border": "normal",
