@@ -117,7 +117,6 @@
 }
 
 {
-    // splitv split container with 2 children
     "border": "normal",
     "floating": "auto_off",
     "layout": "splitv",
@@ -134,16 +133,12 @@
                "x": 0,
                "y": 0
             },
-            "name": "frelun@sys-mgmt-01: ~/src/ansible",
+            "name": "Term",
             "percent": 0.5,
             "swallows": [
                {
                 "class": "^Gnome\\-terminal$",
                 "window_role": "i3-term"
-               // "instance": "^gnome\\-terminal\\-server$",
-               // "title": "^frelun\\@sys\\-mgmt\\-01\\:\\ \\~\\/src\\/ansible$",
-               // "transient_for": "^$",
-               // "window_role": "^gnome\\-terminal\\-window\\-6e20c173\\-45a8\\-49ae\\-a978\\-289128b16361$"
                }
             ],
             "type": "con"
@@ -158,15 +153,12 @@
                "x": 1709,
                "y": 727
             },
-            "name": "Slack - Verisure",
+            "name": "Franz",
             "percent": 0.5,
             "swallows": [
                {
-                "class": "^Slack$"
-               // "instance": "^slack$",
-               // "title": "^Slack\\ \\-\\ Verisure$",
-               // "transient_for": "^$",
-               // "window_role": "^browser\\-window$"
+                "class": "^Franz$",
+                "instance": "^Franz$"
                }
             ],
             "type": "con"
