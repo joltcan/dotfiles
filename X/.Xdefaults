@@ -1,52 +1,49 @@
 !  xrdb -merge ~/.Xdefaults ; urxvt
-xterm*dynamicColors: true
-xterm*background: black
-xterm*foreground: white
-xterm*utf8: 2
-xterm*eightBitInput: true
-xterm*saveLines: 32767
-xterm*scrollTtyKeypress: true
-xterm*scrollTtyOutput: false
-xterm*scrollBar: false
-xterm*loginShell: true
-xterm*faceName: Monospace:pixelsize=11
-xterm*jumpScroll: true
-xterm*multiScroll: true
-xterm*toolBar: false
-xterm*geometry: 80x25
+! 
 ! General
-!
 URxvt*termName:  		xterm-256color
 URxvt*loginShell:         true
 URxvt*scrollBar:         false
-URxvt*secondaryScroll:    true
 URxvt*saveLines:         65535
 URxvt*cursorBlink:       false
 URxvt*urgentOnBell:       false
+! Disable scrolling with output 
+URxvt*scrollTtyOutput: false 
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up) 
+URxvt*scrollWithBuffer: true 
+! scroll back to the bottom on keypress 
+URxvt*scrollTtyKeypress: true 
+! Pager scrolling 
+URxvt.secondaryScreen: 1 
+URxvt.secondaryScroll: 0 
 
 ! Extensions
 URxvt*perl-lib:        /usr/lib/urxvt/perl/
-URxvt*perl-ext-common: default,matcher,searchable-scrollback,selection-to-clipboard
+URxvt*perl-ext-common: default,matcher,searchable-scrollback,option-popup,font-size
 URxvt*url-launcher:     /usr/bin/xdg-open
 URxvt*UnderLineURLs:    true
 URxvt*matcher.button:  1
 !  - catch ugly URLs
 URxvt.cutchars:        "`()'*<>[]{|}=:"
-
-URxvt.font: xft:Terminus:size=9:antialias=true:hinting=false
-URxvt.boldfont: xft:Terminus:size=9:antialias=true:hinting=false:bold=true
-URxvt.italicfont: xft:Terminus:size=9:antialias=true:hinting=false:bold=false:italic=true
-URxvt.boldItalicfont: xft:Terminus:size=9:antialias=true:hinting=false:bold=true:italic=true
-URxvt.letterSpace: 1
-URxvt*mapAlert: true
+!
+URxvt.*font: xft:Terminus:size=9
+!urxvt.font:             xft: Dejavu Sans Mono:autohint=true:antialias=true:size=9
+!URxvt.boldfont: xft:Terminus:size=9:antialias=true:hinting=false:bold=true
+!URxvt.italicfont: xft:Terminus:size=9:antialias=true:hinting=false:bold=false:italic=true
+!URxvt.boldItalicfont: xft:Terminus:size=9:antialias=true:hinting=false:bold=true:italic=true
+!URxvt*mapAlert: true
 ! fade when not active
 URxvt*fading:  15
+URXft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            full
+urxvt*allow_bold:    true
 
 !  - cursor
 URxvt*cursorColor: #017b00
 !  - pseudo transparency
-!URxvt*shading:    50
-!URxvt*transparent:true
+URxvt*shading:    30
+URxvt*transparent:true
 !
 URxvt.foreground: #DDDDDD
 URxvt.background: #151515
@@ -78,4 +75,11 @@ URxvt.color15: #ffffff
 ! Shortcuts
 !URxvt.keysym.M-C-s: command
 
-!URxvt*iso14755:	false
+URxvt*iso14755:	        true
+
+URxvt.keysym.C-plus:     font-size:increase
+URxvt.keysym.C-minus:   font-size:decrease
+URxvt.keysym.C-S-Up:   font-size:incglobal
+URxvt.keysym.C-S-Down: font-size:decglobal
+URxvt.keysym.C-equal:  font-size:reset
+URxvt.keysym.C-slash:  font-size:show

@@ -41,7 +41,7 @@ set winminheight=1			" ok to squash windows
 "set backup                 " enable creation of backup files
 set incsearch				" makes vim search as soon as you start typing (can be slow)
 set expandtab				" converts tabs/indents to normal spaces
-set bg=dark				" make colors more visible on dark themes
+set bg=dark     " make colors more visible on dark themes
 
 "set listchars=eol:$,tab:>-,trail:•,extends:»,precedes:«,nbsp:%
 :let mapleader = "\<Space>"
@@ -67,7 +67,6 @@ autocmd FileType yaml setl indentkeys-=<:>
 
 :set mousemodel=extend
 set pastetoggle=<F10>
-set background=dark
 
 " remove search with leader c
 map <leader>c :nohl<CR>
