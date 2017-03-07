@@ -27,7 +27,9 @@ set_prompt()
    # Line 2: current path
    #PS1="\[$txtbold\]\[$txtwhite\]\n\D{%A %d %B %Y %H:%M:%S}\n\[$txtgreen\]\w\n"
 
-   PS1="\n"
+   PS1=""
+
+   #PS1="\n"
    
    # User color: red for root, yellow for others
    if [[ $EUID == 0 ]]; then
@@ -36,17 +38,15 @@ set_prompt()
        PS1+="\[$txtyellow\]"   
    fi
 
-   # @host - note if host is my laptop
-   if [[ $HOSTNAME == "SEMALL0404" ]]; then
-       PS1+="\u\[$txtwhite\]@\h"
-   elif [ -e ~/.host-PS1-override ]; then
+   # @host - not if host is my laptop
+   if [ -e ~/.host-PS1-override ]; then
 	   source ~/.host-PS1-override
    else
        PS1+="\u\[$txtwhite\]@\[$txtbackgreen\]\h\[$txtreset\]"
    fi
    
    # Path
-   PS1+=":\[$txtgreen\]\w\n"
+   PS1+=":\[$txtgreen\]\w\[$txtreset\]\n"
 
 
    # Line 4: a red "✗" or a green "✓" and the error number
@@ -60,7 +60,7 @@ set_prompt()
    PS1+="\[$txtgreen\]$(__git_ps1 ' (%s)')\[$txtwhite\]"
    # Line 4: good old prompt, $ for user, # for root
    # and \e is for gnome title
-   PS1+=" \\$ \[\e]0;\u@\h: \w\a\]"
+   PS1+=" \\$ \[\e]0;\u@\h: \w\a\]\[$txtreset\]"
 }
 
 PROMPT_COMMAND='set_prompt'

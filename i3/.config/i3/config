@@ -174,7 +174,7 @@ bar {
 
 # Lock
 bindsym Mod1+Ctrl+l exec xautolock -locknow
-bindsym $mod+F9 exec "toggle_screen.sh"
+bindsym $mod+Shift+t exec "toggle_screen.sh"
 
 # Floating windows
 for_window [class="remmina"] floating enable
@@ -186,6 +186,7 @@ for_window [class="seahorse"] floating enable
 for_window [class="1Password.exe" ] move to scratchpad
 
 # Exec on startup 
+exec --no-startup-id i3-msg reload
 exec --no-startup-id unity-settings-daemon
 exec --no-startup-id autokey-gtk
 exec --no-startup-id xfce4-clipman
@@ -194,22 +195,27 @@ exec --no-startup-id pnmixer
 exec --no-startup-id "dropbox start"
 exec --no-startup-id nm-applet
 exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' # caps is now escape
+exec --no-startup-id i3-msg reload
 
 # bind workspaces to the right monitors
 workspace 1 output DP2-1
 workspace 2 output DP2-1
 workspace 3 output DP2-2
 workspace 4 output DP2-2
+workspace 4 output eDP1
+
+# bind window to workspace?
+assign [class="google-chrome" title="^Grafana.*"] 5
 
 # lets load some desktops!
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-term.json'"
-exec --no-startup-id gnome-terminal --role=i3-term
-exec --no-startup-id gnome-terminal --role=i3-term
-exec --no-startup-id gnome-terminal --role=i3-term 
-exec --no-startup-id gnome-terminal --role=i3-term
-exec --no-startup-id gnome-terminal --role=i3-term
-exec --no-startup-id google-chrome 
+exec --no-startup-id i3-sensible-terminal
+exec --no-startup-id i3-sensible-terminal
+exec --no-startup-id i3-sensible-terminal
+exec --no-startup-id i3-sensible-terminal
+exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id franz
+exec --no-startup-id "i3-msg 'workspace 3; ; exec google-chrome'
 
 # scratchpad
 bindsym $mod+shift+s scratchpad show

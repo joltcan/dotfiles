@@ -15,10 +15,10 @@ if [ -f ~/.uber_prompt.include ]; then
 	. ~/.uber_prompt.include
 fi
 
-eval $(dircolors -b)
-_rev="\[$(tput rev 2> /dev/null)\]"
-_reset="\[$(tput sgr0 2> /dev/null)\]"
-PS1="[${_rev}\u@\h${_reset}]\w\\$ "
+#eval $(dircolors -b)
+#_rev="\[$(tput rev 2> /dev/null)\]"
+#_reset="\[$(tput sgr0 2> /dev/null)\]"
+#PS1="[${_rev}\u@\h${_reset}]\w\\$ "
 
 # User specific aliases and functions
 alias cal='cal -3 -m'

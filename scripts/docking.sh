@@ -9,17 +9,18 @@
 
 export DISPLAY=:0.0
 
+LOG=/tmp/dock.log
+
 if [ "$USER" == "root" ] ; then
-    if [ "$1" == "undocked" ]; then tlp bat >> $LOG ; fi
+    if [ "$1" == "undocked" ]; then 
+        tlp bat >> $LOG 
+    fi
     if [ "$1" == "docked" ]; then 
         tlp ac >> $LOG
         # fix for usb stuff when moving from laptop only to dock
         echo 'on' | tee '/sys/bus/usb/devices/1-4.3/power/control' # keyboard
         echo 'on' | tee '/sys/bus/usb/devices/1-4.4.2/power/control' # mouse
     fi
-    su jolt -c "nitrogen --restore"
-else
-    nitrogen --restore
 fi
 
 
