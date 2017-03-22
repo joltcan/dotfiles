@@ -7,9 +7,9 @@
 #}}}
 # user {{{
 [user]
-	name = Fredrik Lundhag
+    name = Fredrik Lundhag
+    #email = f@mekk.com
 # email needs to be set by
-# export GIT_AUTHOR_EMAIL=f@mekk.com
 #}}}
 
 # color {{{

@@ -14,6 +14,10 @@ fi
 if [ -f ~/.uber_prompt.include ]; then
 	. ~/.uber_prompt.include
 fi
+if [ -f /etc/bash_completion ]; then
+	. /etc/bash_completion
+fi
+
 
 #eval $(dircolors -b)
 #_rev="\[$(tput rev 2> /dev/null)\]"
