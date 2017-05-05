@@ -52,7 +52,7 @@
 # alias {{{
 [alias]
     # basic {{{
-    st = status -s
+    st = status
     cl = clone
     ci = commit
     co = checkout
@@ -82,6 +82,7 @@
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     lc  = "!f() { git ll "$1"^.."$1"; }; f"
     lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
     fl = log -u
     filelog = log -u
     # }}}
