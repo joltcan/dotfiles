@@ -10,7 +10,7 @@ export DISPLAY=:0.0
 
 if (xrandr |grep "$EXT1 disconnected" >/dev/null ); then
     echo "$(date ) internal" >> $LOG
-	#xrandr --output $EXT1 --off --output $EXT2 --off --output $IN --auto
+	xrandr --output $EXT1 --off --output $EXT2 --off --output $IN --auto
 	xrandr --output $IN --auto >> $LOG 2>&1
 else
     echo "$(date) external" >> $LOG 2>&1
@@ -20,4 +20,5 @@ fi
 
 i3-msg reload
 nitrogen --restore
+xmodmap -e "clear Lock" -e "keycode 0x42 = Escape"
 
