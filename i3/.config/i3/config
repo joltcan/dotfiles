@@ -176,7 +176,7 @@ bar {
 bindsym Mod1+Ctrl+l exec xautolock -locknow
 bindsym $mod+Shift+t exec "toggle_screen.sh"
 #bindsym --release Shift+Ctrl+p exec --no-startup-id "/home/jolt/Dropbox/linux/get-pw.py| perl -p -e 's/\n//' | xvkbd -file -"
-bindsym --release Shift+Ctrl+p exec --no-startup-id "/home/jolt/Dropbox/linux/get-pw.py | xvkbd -file -"
+bindsym --release Shift+Ctrl+p exec --no-startup-id "/home/jolt/Dropbox/linux/get-pw.py | xvkbd -no-jump-pointer -file -"
 bindsym Mod1+c exec --no-startup-id xfce4-popup-clipman 
 bindsym --release $mod+v exec --no-startup-id xdotool key --clearmodifiers Shift+Insert
 
@@ -211,15 +211,11 @@ workspace 5 output eDP1
 # bind window to workspace?
 assign [class="google-chrome" title="^Grafana.*"] 5
 
-# lets load some desktops!
-exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-term.json'"
-exec --no-startup-id i3-sensible-terminal
-exec --no-startup-id i3-sensible-terminal
-exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id franz
-exec --no-startup-id "i3-msg 'workspace 3; ; exec google-chrome'"
+exec --no-startup-id i3-msg 'workspace 3'
+exec google-chrome
 
 # scratchpad
 bindsym $mod+shift+s scratchpad show
@@ -240,4 +236,3 @@ exec --no-startup-id pidgin
 #client.focused_inactive #333333 #5F676A #ffffff #484e50
 #client.unfocused        #333333 #424242 #888888 #292d2e 
 #client.urgent           #C10004 #900000 #ffffff #900000
-
