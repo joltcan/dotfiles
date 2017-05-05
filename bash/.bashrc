@@ -16,6 +16,8 @@ if [ -f ~/.uber_prompt.include ]; then
 fi
 if [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
+    # turn of completion for basename stuff
+    shopt -u progcomp
 fi
 
 
