@@ -77,4 +77,7 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 "fix hilight color
 hi Visual term=reverse cterm=reverse guibg=Grey
 
+if filereadable("$HOME/.vimrc.local")
+  source $HOME/.vimrc.local
+endif
 
