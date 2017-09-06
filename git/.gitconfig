@@ -8,9 +8,8 @@
 # user {{{
 [user]
 	name = Fredrik Lundhag
-    #email = f@mekk.com
-# email needs to be set by
-#}}}
+	useConfigOnly = true
+# user }}}
 
 # color {{{
 [color]
