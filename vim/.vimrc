@@ -41,7 +41,7 @@ set winminheight=1			" ok to squash windows
 "set backup                 " enable creation of backup files
 set incsearch				" makes vim search as soon as you start typing (can be slow)
 set expandtab				" converts tabs/indents to normal spaces
-set bg=dark     " make colors more visible on dark themes
+set bg=dark                 " make colors more visible on dark themes
 
 "set listchars=eol:$,tab:>-,trail:•,extends:»,precedes:«,nbsp:%
 :let mapleader = "\<Space>"
@@ -80,4 +80,22 @@ hi Visual term=reverse cterm=reverse guibg=Grey
 if filereadable("$HOME/.vimrc.local")
   source $HOME/.vimrc.local
 endif
+
+"duplicate line cmd-d
+map <D-d> yyp
+
+" cmd + number for switching tabs
+map <D-1> 1gt
+map <D-2> 2gt
+map <D-3> 3gt
+map <D-4> 4gt
+map <D-5> 5gt
+map <D-6> 6gt
+map <D-7> 7gt
+map <D-8> 8gt
+map <D-9> 9gt
+map <D-0> 0gt
+
+"toggle_comment to use CMD-/
+map <D-/> q
 
