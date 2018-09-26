@@ -99,9 +99,14 @@ map <D-0> 0gt
 "toggle_comment to use CMD-/
 map <D-/> q
 
-" auto nopaste 
+" auto paste 
+" Thanks to https://www.supertechcrew.com/extra-characters-paste-ssh-bracketed-paste/
+if !exists("g:bracketed_paste_tmux_wrap")
+  let g:bracketed_paste_tmux_wrap = 1
+endif
+
 function! WrapForTmux(s)
-  if !exists('$TMUX')
+  if !g:bracketed_paste_tmux_wrap || !exists('$TMUX')
     return a:s
   endif
 
@@ -111,14 +116,20 @@ function! WrapForTmux(s)
   return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
 endfunction
 
-let &t_SI .= WrapForTmux("\<Esc>[?2004h")
-let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+let &t_ti .= WrapForTmux("\<Esc>[?2004h")
+let &t_te .= WrapForTmux("\<Esc>[?2004l")
 
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
+function! XTermPasteBegin(ret)
+  set pastetoggle=<f29>
   set paste
-  return ""
+  return a:ret
 endfunction
 
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
+execute "set <f28>=\<Esc>[200~"
+execute "set <f29>=\<Esc>[201~"
+map <expr> <f28> XTermPasteBegin("i")
+imap <expr> <f28> XTermPasteBegin("")
+vmap <expr> <f28> XTermPasteBegin("c")
+cmap <f28> <nop>
+cmap <f29> <nop>
+# end auto paste
