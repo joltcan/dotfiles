@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# From https://raw.githubusercontent.com/samoshkin/tmux-config/af2efd9561f41f30c51c9deeeab9451308c4086b/tmux/yank.sh
+
 set -eu
 
 is_app_installed() {
