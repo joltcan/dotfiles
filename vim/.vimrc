@@ -16,7 +16,8 @@ Bundle 'tpope/vim-surround.git'
 Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'fatih/vim-go'
-
+Bundle 'airblade/vim-gitgutter.git'
+Plugin 'vim-airline/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,12 +61,11 @@ if has("autocmd")
 endif
 
 map <silent> <C-t> :NERDTreeToggle<CR>
+map <leader>ff :NERDTreeFind<CR>
 
 let g:vim_markdown_folding_disabled = 1
 
-autocmd FileType yaml setl indentkeys-=<:>
-
-:set mousemodel=extend
+set mousemodel=extend
 set pastetoggle=<F10>
 
 " remove search with leader c
@@ -133,3 +133,15 @@ vmap <expr> <f28> XTermPasteBegin("c")
 cmap <f28> <nop>
 cmap <f29> <nop>
 " end auto paste
+
+" fix yaml
+autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2 indentkeys-=<:>
+
+" airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+set listchars=tab:▷\ ,trail:.,extends:#,nbsp:.
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
+set ruler        " show the ruler
+set cursorline   " highlight cursor line
+
