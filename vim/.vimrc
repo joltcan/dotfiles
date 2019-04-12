@@ -20,6 +20,7 @@ Bundle 'airblade/vim-gitgutter.git'
 Plugin 'vim-airline/vim-airline'
 Bundle 'altercation/vim-colors-solarized.git'
 Bundle 'sheerun/vim-wombat-scheme'
+Plugin 'junegunn/seoul256.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -151,10 +152,8 @@ endif
 
 " fix fonts as well
 if &t_Co >= 256 || has("gui_running")
-    " switch syntax highlighting on, when the terminal has colors
-    syntax on
     let g:solarized_termcolors=256
-    colorscheme wombat
+    colorscheme seoul256
     set guifont=Inconsolata-dz\ for\ Powerline:h12
     " remove the annoying different color of colorcolumn
     :set colorcolumn=
