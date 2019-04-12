@@ -142,6 +142,13 @@ autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2 indentkeys-=<:>
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+" use 256 colors in terminal
+if !has("gui_running")
+    set t_Co=256
+    set term=screen-256color
+endif
+
 " fix fonts as well
 if &t_Co >= 256 || has("gui_running")
     " switch syntax highlighting on, when the terminal has colors
