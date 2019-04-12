@@ -18,6 +18,8 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'fatih/vim-go'
 Bundle 'airblade/vim-gitgutter.git'
 Plugin 'vim-airline/vim-airline'
+Bundle 'altercation/vim-colors-solarized.git'
+Bundle 'sheerun/vim-wombat-scheme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -140,6 +142,16 @@ autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2 indentkeys-=<:>
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+" fix fonts as well
+if &t_Co >= 256 || has("gui_running")
+    " switch syntax highlighting on, when the terminal has colors
+    syntax on
+    let g:solarized_termcolors=256
+    colorscheme wombat
+    set guifont=Inconsolata-dz\ for\ Powerline:h12
+    " remove the annoying different color of colorcolumn
+    :set colorcolumn=
+endif
 set listchars=tab:▷\ ,trail:.,extends:#,nbsp:.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set ruler        " show the ruler
