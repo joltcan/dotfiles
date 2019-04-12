@@ -138,7 +138,7 @@ cmap <f29> <nop>
 " end auto paste
 
 " fix yaml
-autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2 indentkeys-=<:>
+autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
@@ -167,4 +167,12 @@ set listchars=tab:▷\ ,trail:.,extends:#,nbsp:.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set ruler        " show the ruler
 set cursorline   " highlight cursor line
+
+" git gutter
+if exists('&signcolumn')  " Vim 7.4.2201
+  set signcolumn=yes
+else
+  let g:gitgutter_sign_column_always = 1
+endif
+highlight SignColumn guibg=whatever      " gVim/MacVim
 
