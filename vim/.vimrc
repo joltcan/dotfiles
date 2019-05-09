@@ -18,9 +18,8 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'fatih/vim-go'
 Bundle 'airblade/vim-gitgutter.git'
 Plugin 'vim-airline/vim-airline'
-Bundle 'altercation/vim-colors-solarized.git'
-Bundle 'sheerun/vim-wombat-scheme'
-Plugin 'junegunn/seoul256.vim'
+" onehalf theme
+Bundle 'sonph/onehalf', {'rtp': 'vim/'}
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -36,16 +35,14 @@ set shiftwidth=4			" makes automatic indents consume 4 spaces
 set ignorecase				" ignore case when searching in documents
 set title icon				" change the terminal title to the document name
 set ruler					" show the cursor position all the time
-set laststatus=2			" use a 2 row statusline (always show filename)
+" set laststatus=2			" use a 2 row statusline (always show filename)
 set hlsearch				" highlight searching
 set autoindent				" automatically keep the current lines indent level for new lines.
-set smartindent				" intelligently try to guess the a new lines indent level.
+" set smartindent				" intelligently try to guess the a new lines indent level.
 set winminheight=1			" ok to squash windows
 
-"set backup                 " enable creation of backup files
 set incsearch				" makes vim search as soon as you start typing (can be slow)
 set expandtab				" converts tabs/indents to normal spaces
-set bg=dark                 " make colors more visible on dark themes
 
 "set listchars=eol:$,tab:>-,trail:•,extends:»,precedes:«,nbsp:%
 :let mapleader = "\<Space>"
@@ -53,10 +50,17 @@ map <silent> <Leader>p :set invpaste<CR>
 map <silent> <Leader>l :set invlist<CR>
 noremap <silent> <Space> :silent noh<Bar>echo<CR>
 
-hi SpecialKey ctermfg=7
-hi NonText ctermfg=7
+" hi SpecialKey ctermfg=7
+" hi NonText ctermfg=7
 
+" this path is apache files
 au BufNewFile,BufRead /etc/httpd/conf.d/* setf apache
+" fix edit crontab in osx
+autocmd filetype crontab setlocal nobackup nowritebackup
+" fix yaml
+autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2
+
+
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
@@ -73,12 +77,6 @@ set pastetoggle=<F10>
 
 " remove search with leader c
 map <leader>c :nohl<CR>
-
-" fix edit crontab in osx
-autocmd filetype crontab setlocal nobackup nowritebackup
-
-"fix hilight color
-hi Visual term=reverse cterm=reverse guibg=Grey
 
 if filereadable("$HOME/.vimrc.local")
   source $HOME/.vimrc.local
@@ -136,33 +134,27 @@ vmap <expr> <f28> XTermPasteBegin("c")
 cmap <f28> <nop>
 cmap <f29> <nop>
 " end auto paste
+ 
+" use 256 colors
+set t_Co=256
+set term=screen-256color
 
-" fix yaml
-autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2
+" fix fonts as well
+set guifont=Inconsolata-dz\ for\ Powerline:h12
 
 " airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-" use 256 colors in terminal
-if !has("gui_running")
-    set t_Co=256
-    set term=screen-256color
-endif
+" theme settings
+:set background=light
+let g:airline_theme='onehalfdark'
+colorscheme onehalfdark
 
-" fix fonts as well
-if &t_Co >= 256 || has("gui_running")
-    " let g:solarized_termcolors=256
-    colorscheme seoul256
-    set guifont=Inconsolata-dz\ for\ Powerline:h12
-    " Range:   233 (darkest) ~ 239 (lightest)
-    " Default: 237
-    let g:seoul256_background = 233
+" remove the annoying different color of colorcolumn
+:set colorcolumn=
 
-    " remove the annoying different color of colorcolumn
-    :set colorcolumn=
-
-endif
+" thanks leihog!
 set listchars=tab:▷\ ,trail:.,extends:#,nbsp:.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set ruler        " show the ruler
