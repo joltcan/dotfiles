@@ -167,3 +167,5 @@ else
   let g:gitgutter_sign_column_always = 1
 endif
 
+" map f8 to open file under cursor
+map <F8> :vertical wincmd f<CR>
