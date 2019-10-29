@@ -1,7 +1,6 @@
 " Install vundle with 
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" then run 
-" vim +PluginInstall +qall
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim ; vim +PluginInstall +qall
+"
 set nocompatible			" prevent vim from emulating the original vi's bugs and limitations.
 " Required Vundle setup
 filetype off
@@ -18,6 +17,9 @@ Plugin 'pearofducks/ansible-vim'
 Plugin 'fatih/vim-go'
 Bundle 'airblade/vim-gitgutter.git'
 Plugin 'vim-airline/vim-airline'
+Bundle 'mrk21/yaml-vim'
+
+" themes
 " onehalf theme
 Bundle 'sonph/onehalf', {'rtp': 'vim/'}
 
