@@ -174,7 +174,9 @@
 	gom = stash
 	klandra = blame
 	marke = tag
-	mark = tag
+    mark = tag
+	update = !git pull && git submodule update --init --recursive
+
 [rerere]
   enabled = false
 [rebase]
