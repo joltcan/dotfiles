@@ -13,11 +13,10 @@ Bundle 'plasticboy/vim-markdown.git'
 Bundle 'tpope/vim-sensible.git'
 Bundle 'tpope/vim-surround.git'
 Plugin 'ConradIrwin/vim-bracketed-paste'
-Plugin 'pearofducks/ansible-vim'
 Plugin 'fatih/vim-go'
 Bundle 'airblade/vim-gitgutter.git'
 Plugin 'vim-airline/vim-airline'
-Bundle 'mrk21/yaml-vim'
+Plugin 'MicahElliott/Rocannon'
 
 " themes
 " onehalf theme
@@ -37,16 +36,15 @@ set shiftwidth=4			" makes automatic indents consume 4 spaces
 set ignorecase				" ignore case when searching in documents
 set title icon				" change the terminal title to the document name
 set ruler					" show the cursor position all the time
-" set laststatus=2			" use a 2 row statusline (always show filename)
 set hlsearch				" highlight searching
 set autoindent				" automatically keep the current lines indent level for new lines.
-" set smartindent				" intelligently try to guess the a new lines indent level.
+set smartindent			" intelligently try to guess the a new lines indent level.
 set winminheight=1			" ok to squash windows
-
 set incsearch				" makes vim search as soon as you start typing (can be slow)
 set expandtab				" converts tabs/indents to normal spaces
+set list                    " show hidden chars per default
 
-"set listchars=eol:$,tab:>-,trail:•,extends:»,precedes:«,nbsp:%
+set listchars=eol:$,tab:>-,trail:•,extends:»,precedes:«,nbsp:%
 :let mapleader = "\<Space>"
 map <silent> <Leader>p :set invpaste<CR>
 map <silent> <Leader>l :set invlist<CR>
@@ -60,8 +58,7 @@ au BufNewFile,BufRead /etc/httpd/conf.d/* setf apache
 " fix edit crontab in osx
 autocmd filetype crontab setlocal nobackup nowritebackup
 " fix yaml
-autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2
-
+"autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -71,8 +68,6 @@ endif
 
 map <silent> <C-t> :NERDTreeToggle<CR>
 map <leader>ff :NERDTreeFind<CR>
-
-let g:vim_markdown_folding_disabled = 1
 
 set mousemodel=extend
 set pastetoggle=<F10>
@@ -171,3 +166,27 @@ endif
 
 " map f8 to open file under cursor
 map <F8> :vertical wincmd f<CR>
+
+noremap <silent> <Space> :silent noh<Bar>echo<CR>
+
+" https://stackoverflow.com/a/53930943/6148844
+nnoremap <Leader>2 :call ToggleSignColumn()<CR>
+" Toggle signcolumn. Works only on vim>=8.0 or NeoVim
+function! ToggleSignColumn()
+    if !exists("b:signcolumn_on") || b:signcolumn_on
+        set signcolumn=no
+        let b:signcolumn_on=0
+    else
+        set signcolumn=auto
+        let b:signcolumn_on=1
+    endif
+endfunction
+
+" https://github.com/MicahElliott/Rocannon
+au BufNewFile,BufRead *.yml setf ansible
+" set folds
+inoremap <F9> <C-O>za
+nnoremap <F9> za
+onoremap <F9> <C-C>za
+vnoremap <F9> zf
+
