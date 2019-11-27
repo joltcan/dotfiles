@@ -152,7 +152,7 @@ colorscheme onehalfdark
 :set colorcolumn=
 
 " thanks leihog!
-set listchars=tab:▷\ ,trail:.,extends:#,nbsp:.
+set listchars=tab:>\ ,trail:.,extends:#,nbsp:.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set ruler        " show the ruler
 set cursorline   " highlight cursor line
