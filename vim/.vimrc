@@ -16,7 +16,8 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'fatih/vim-go'
 Bundle 'airblade/vim-gitgutter.git'
 Plugin 'vim-airline/vim-airline'
-Plugin 'MicahElliott/Rocannon'
+Bundle 'neitanod/vim-clevertab.git'
+Bundle 'chase/vim-ansible-yaml'
 
 " themes
 " onehalf theme
@@ -182,11 +183,28 @@ function! ToggleSignColumn()
     endif
 endfunction
 
-" https://github.com/MicahElliott/Rocannon
-au BufNewFile,BufRead *.yml setf ansible
 " set folds
 inoremap <F9> <C-O>za
 nnoremap <F9> za
 onoremap <F9> <C-C>za
 vnoremap <F9> zf
+
+" https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
+:set completeopt=longest,menuone
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+" https://github.com/neitanod/vim-clevertab
+inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
+                      \<c-r>=CleverTab#Complete('tab')<cr>
+                      \<c-r>=CleverTab#Complete('omni')<cr>
+                      \<c-r>=CleverTab#Complete('stop')<cr>
+inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
+
+" ansible
+autocmd FileType yaml setlocal ai ts=2 sw=2 et
+autocmd FileType ansible setlocal ai ts=2 sw=2 et foldmethod=syntax
+let g:ansible_options = {'documentation_mapping': '<C-K>'}
 
