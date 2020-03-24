@@ -26,6 +26,14 @@ fi
 #_reset="\[$(tput sgr0 2> /dev/null)\]"
 #PS1="[${_rev}\u@\h${_reset}]\w\\$ "
 
+# ssh for bash-completion
+function _own_ssh_known_hosts() {
+    perl -ne 'print "$1 " if /^([\w\d-\.]+).*$/i' ~/.ssh/known_hosts
+}
+function _own_ssh_completion() {
+perl -ne 'print "$1 " if /^host (.+)$/i' ~/.ssh/config
+}
+
 # User specific aliases and functions
 alias cal='cal -3 -m'
 alias gpp='git pull && git push'
