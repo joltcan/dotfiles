@@ -16,9 +16,7 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'fatih/vim-go'
 Bundle 'airblade/vim-gitgutter.git'
 Plugin 'vim-airline/vim-airline'
-Bundle 'neitanod/vim-clevertab.git'
-" neco is a depencency from clevertab
-Bundle 'Shougo/neco-vim'
+Bundle 'chase/vim-ansible-yaml'
 
 " themes
 " onehalf theme
@@ -29,20 +27,23 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 " here comes the defaults 
-syntax on					" enable syntax highlighting
-set bs=2					" allow backspacing over everything in insert mode
-set wildmode=longest,list	" file search
-set showmatch				" make a quick jump to the opening bracket when writing the closing.
-set tabstop=4				" makes tabs consume 4 spaces
-set shiftwidth=4			" makes automatic indents consume 4 spaces
-set ignorecase				" ignore case when searching in documents
-set title icon				" change the terminal title to the document name
-set ruler					" show the cursor position all the time
-set hlsearch				" highlight searching
-set winminheight=1			" ok to squash windows
-set incsearch				" makes vim search as soon as you start typing (can be slow)
-set expandtab				" converts tabs/indents to normal spaces
+syntax on                   " enable syntax highlighting
+set bs=2                    " allow backspacing over everything in insert mode
+set wildmode=longest,list   " file search
+set showmatch               " make a quick jump to the opening bracket when writing the closing.
+set tabstop=4               " makes tabs consume 4 spaces
+set shiftwidth=4            " makes automatic indents consume 4 spaces
+set ignorecase              " ignore case when searching in documents
+set title icon              " change the terminal title to the document name
+set ruler                   " show the cursor position all the time
+set hlsearch                " highlight searching
+set autoindent              " automatically keep the current lines indent level for new lines.
+set smartindent             " intelligently try to guess the a new lines indent level.
+set winminheight=1          " ok to squash windows
+set incsearch               " makes vim search as soon as you start typing (can be slow)
+set expandtab               " converts tabs/indents to normal spaces
 set list                    " show hidden chars per default
+set nofoldenable            " disable folding
 
 set listchars=eol:$,tab:>-,trail:•,extends:»,precedes:«,nbsp:%
 :let mapleader = "\<Space>"
@@ -57,6 +58,8 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " fix edit crontab in osx
 autocmd filetype crontab setlocal nobackup nowritebackup
+" fix yaml
+autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -180,11 +183,6 @@ function! ToggleSignColumn()
     endif
 endfunction
 
-" set folds
-inoremap <F9> <C-O>za
-nnoremap <F9> za
-onoremap <F9> <C-C>za
-vnoremap <F9> zf
 
 " https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 :set completeopt=longest,menuone
@@ -193,15 +191,8 @@ inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
-" https://github.com/neitanod/vim-clevertab
-inoremap <silent><tab> <c-r>=CleverTab#Complete('start')<cr>
-                      \<c-r>=CleverTab#Complete('tab')<cr>
-                      \<c-r>=CleverTab#Complete('omni')<cr>
-                      \<c-r>=CleverTab#Complete('stop')<cr>
-inoremap <silent><s-tab> <c-r>=CleverTab#Complete('prev')<cr>
 
 " ansible
 autocmd FileType yaml setlocal ai ts=2 sw=2 et
-autocmd FileType ansible setlocal ai ts=2 sw=2 et foldmethod=syntax
 let g:ansible_options = {'documentation_mapping': '<C-K>'}
 

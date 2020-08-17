@@ -3,7 +3,7 @@ if filereadable("$HOME/.vimrc")
 endif
 
 set gfn=monoid:h12
-set bg=light
+set bg=dark
 au! BufWritePost .vimrc so %
 au! BufWritePost .gvimrc so %
 
