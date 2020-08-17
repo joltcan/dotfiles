@@ -17,7 +17,8 @@ Plugin 'fatih/vim-go'
 Bundle 'airblade/vim-gitgutter.git'
 Plugin 'vim-airline/vim-airline'
 Bundle 'neitanod/vim-clevertab.git'
-Bundle 'chase/vim-ansible-yaml'
+" neco is a depencency from clevertab
+Bundle 'Shougo/neco-vim'
 
 " themes
 " onehalf theme
@@ -38,8 +39,6 @@ set ignorecase				" ignore case when searching in documents
 set title icon				" change the terminal title to the document name
 set ruler					" show the cursor position all the time
 set hlsearch				" highlight searching
-set autoindent				" automatically keep the current lines indent level for new lines.
-set smartindent			" intelligently try to guess the a new lines indent level.
 set winminheight=1			" ok to squash windows
 set incsearch				" makes vim search as soon as you start typing (can be slow)
 set expandtab				" converts tabs/indents to normal spaces
@@ -51,15 +50,13 @@ map <silent> <Leader>p :set invpaste<CR>
 map <silent> <Leader>l :set invlist<CR>
 noremap <silent> <Space> :silent noh<Bar>echo<CR>
 
-" hi SpecialKey ctermfg=7
-" hi NonText ctermfg=7
+" fix override options for filetypes
+autocmd BufNewFile,BufRead /etc/httpd/conf.d/* setf apache
+autocmd BufNewFile,BufRead rsnapshot.conf setlocal noexpandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-" this path is apache files
-au BufNewFile,BufRead /etc/httpd/conf.d/* setf apache
 " fix edit crontab in osx
 autocmd filetype crontab setlocal nobackup nowritebackup
-" fix yaml
-"autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
