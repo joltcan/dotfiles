@@ -2,30 +2,32 @@
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    source /etc/bashrc
 fi
 # Source local as well
 if [ -f ~/.bashrc.local ]; then
-	. ~/.bashrc.local
+    source ~/.bashrc.local
+fi
+# Source ssh aliases if we have it
+if [ -f ~/.bash_ssh ]; then
+    source ~/.bash_ssh
 fi
 if [ -f ~/.bash_git ]; then
-	. ~/.bash_git
+    source ~/.bash_git
 fi
 if [ -f ~/.uber_prompt.include ]; then
-	. ~/.uber_prompt.include
+    source ~/.uber_prompt.include
 fi
 if [ -f /etc/bash_completion ]; then
-	. /etc/bash_completion
+    source /etc/bash_completion
     # turn of completion for basename stuff
     shopt -u progcomp
 fi
 
-
-#eval $(dircolors -b)
-#_rev="\[$(tput rev 2> /dev/null)\]"
-#_reset="\[$(tput sgr0 2> /dev/null)\]"
-#PS1="[${_rev}\u@\h${_reset}]\w\\$ "
-
+# good bye apple warning zsh warning
+if [[ $OSTYPE == *darwin* ]]; then
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+fi
 # ssh for bash-completion
 function _own_ssh_known_hosts() {
     perl -ne 'print "$1 " if /^([\w\d-\.]+).*$/i' ~/.ssh/known_hosts
