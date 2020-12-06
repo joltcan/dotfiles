@@ -45,7 +45,6 @@ set expandtab               " converts tabs/indents to normal spaces
 set list                    " show hidden chars per default
 set nofoldenable            " disable folding
 
-set listchars=eol:$,tab:>-,trail:•,extends:»,precedes:«,nbsp:%
 :let mapleader = "\<Space>"
 map <silent> <Leader>p :set invpaste<CR>
 map <silent> <Leader>l :set invlist<CR>
