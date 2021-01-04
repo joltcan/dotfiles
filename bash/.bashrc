@@ -20,21 +20,7 @@ if [ -f ~/.uber_prompt.include ]; then
 fi
 if [ -f /etc/bash_completion ]; then
     source /etc/bash_completion
-    # turn of completion for basename stuff
-    shopt -u progcomp
 fi
-
-# good bye apple warning zsh warning
-if [[ $OSTYPE == *darwin* ]]; then
-    export BASH_SILENCE_DEPRECATION_WARNING=1
-fi
-# ssh for bash-completion
-function _own_ssh_known_hosts() {
-    perl -ne 'print "$1 " if /^([\w\d-\.]+).*$/i' ~/.ssh/known_hosts
-}
-function _own_ssh_completion() {
-perl -ne 'print "$1 " if /^host (.+)$/i' ~/.ssh/config
-}
 
 # User specific aliases and functions
 alias cal='cal -3 -m'
