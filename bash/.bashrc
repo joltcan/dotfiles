@@ -20,6 +20,8 @@ if [ -f ~/.uber_prompt.include ]; then
 fi
 if [ -f /etc/bash_completion ]; then
     source /etc/bash_completion
+    # use root for lazy sshing per below
+    complete -F _known_hosts root
 fi
 
 # User specific aliases and functions
