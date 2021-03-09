@@ -12,8 +12,8 @@ fi
 if [ -f ~/.bash_ssh ]; then
     source ~/.bash_ssh
 fi
-if [ -f ~/.bash_git ]; then
-    source ~/.bash_git
+if [ -f ~/dotfiles/git/.bash_git ]; then
+    source ~/dotfiles/git/.bash_git
 fi
 if [ -f ~/.uber_prompt.include ]; then
     source ~/.uber_prompt.include
