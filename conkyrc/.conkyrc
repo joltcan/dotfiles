@@ -1,0 +1,54 @@
+
+background      yes
+update_interval 5
+double_buffer   yes
+no_buffers      yes
+#-------------------------------------------------------------------------------
+gap_x                  5
+gap_y                  5
+minimum_size           1920 1080
+maximum_width          370
+alignment              top_left
+own_window             yes
+own_window_transparent yes
+own_window_type        override
+own_window_argb_visual yes
+own_window_hints       undecorated,below,sticky,skip_taskbar,skip_pager
+#-------------------------------------------------------------------------------
+draw_shades           no
+draw_outline          no
+draw_borders          no
+draw_graph_borders    yes
+default_color         lightslategrey
+default_shade_color   000000
+default_outline_color 888888
+#-------------------------------------------------------------------------------
+use_xft              yes
+xftfont              Hermit:size=11:antialias=true
+xftalpha             1
+uppercase            no
+override_utf8_locale yes
+#-------------------------------------------------------------------------------
+TEXT
+${color indianred3}CPU1: ${color}${cpu cpu0}%
+${color}${cpubar cpu0 3}
+${color indianred3}CPU2: ${color}${cpu cpu1}%
+${color}${cpubar cpu1 3}
+${color indianred3}CPU3: ${color}${cpu cpu2}%
+${color}${cpubar cpu2 3}
+${color indianred3}CPU3: ${color}${cpu cpu3}%
+${color}${cpubar cpu3 3}
+
+${color indianred3}Memory: ${color}$mem/$memmax
+${color}${membar 3}${color}
+
+${color indianred3}Network:${color}
+  Up      ${upspeed urtwn0} ${alignr} ${totalup em0} total
+  Down    ${downspeed urtwn0} ${alignr} ${totaldown em0} total
+
+${color indianred3}Disk:${color}
+  ${color}/          ${fs_bar 3,80 /} ${alignr} ${fs_used /}/${fs_size /}
+  ${color}/home      ${fs_bar 3,80 /home} ${alignr} ${fs_used /home}/${fs_size /home}
+  ${color}/tmp       ${fs_bar 3,80 /tmp} ${alignr} ${fs_used /tmp}/${fs_size /tmp}
+  ${color}/usr       ${fs_bar 3,80 /usr} ${alignr} ${fs_used /usr}/${fs_size /usr}
+  ${color}/var       ${fs_bar 3,80 /var} ${alignr} ${fs_used /var}/${fs_size /var}
