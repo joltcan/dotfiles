@@ -17,6 +17,8 @@ Plugin 'fatih/vim-go'
 Bundle 'airblade/vim-gitgutter.git'
 Plugin 'vim-airline/vim-airline'
 Bundle 'chase/vim-ansible-yaml'
+Plugin 'Yggdroot/indentLine'
+Plugin 'dense-analysis/ale'
 
 " themes
 " onehalf theme
@@ -54,12 +56,17 @@ noremap <silent> <Space> :silent noh<Bar>echo<CR>
 " fix override options for filetypes
 autocmd BufNewFile,BufRead /etc/httpd/conf.d/* setf apache
 autocmd BufNewFile,BufRead rsnapshot.conf setlocal noexpandtab
+
+" yaml endings
+" https://lornajane.net/posts/2018/vim-settings-for-working-with-yaml
+au! BufNewFile,BufReadPost *.{yaml,yaml.j2,yml,yml.j2} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" nicer indentation with markers, indentLine plugin
+let g:indentLine_char = '⦙'
 
 " fix edit crontab in osx
 autocmd filetype crontab setlocal nobackup nowritebackup
-" fix yaml
-autocmd filetype yaml setlocal tabstop=2 expandtab shiftwidth=2
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
@@ -183,16 +190,8 @@ function! ToggleSignColumn()
     endif
 endfunction
 
-
-" https://vim.fandom.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-:set completeopt=longest,menuone
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-
-
-" ansible
-autocmd FileType yaml setlocal ai ts=2 sw=2 et
-let g:ansible_options = {'documentation_mapping': '<C-K>'}
+" echodoc
+" To use echodoc, you must increase 'cmdheight' value.
+set cmdheight=2
+let g:echodoc_enable_at_startup = 1
 
