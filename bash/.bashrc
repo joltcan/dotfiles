@@ -12,16 +12,16 @@ fi
 if [ -f ~/.bash_ssh ]; then
     source ~/.bash_ssh
 fi
-if [ -f ~/.bash_git ]; then
-    source ~/.bash_git
+if [ -f ~/dotfiles/git/.bash_git ]; then
+    source ~/dotfiles/git/.bash_git
 fi
 if [ -f ~/.uber_prompt.include ]; then
     source ~/.uber_prompt.include
 fi
 if [ -f /etc/bash_completion ]; then
     source /etc/bash_completion
-    # turn of completion for basename stuff
-    shopt -u progcomp
+    # use root for lazy sshing per below
+    complete -F _known_hosts root
 fi
 
 if [[ $OSTYPE == *darwin* ]]; then
