@@ -24,17 +24,21 @@ if [ -f /etc/bash_completion ]; then
     shopt -u progcomp
 fi
 
-# good bye apple warning zsh warning
 if [[ $OSTYPE == *darwin* ]]; then
+    # good bye apple warning zsh warning
     export BASH_SILENCE_DEPRECATION_WARNING=1
+    # dont update homebrew all the time
+    export HOMEBREW_NO_AUTO_UPDATE=1
 fi
 # ssh for bash-completion
 function _own_ssh_known_hosts() {
     perl -ne 'print "$1 " if /^([\w\d-\.]+).*$/i' ~/.ssh/known_hosts
 }
 function _own_ssh_completion() {
-perl -ne 'print "$1 " if /^host (.+)$/i' ~/.ssh/config
+    perl -ne 'print "$1 " if /^host (.+)$/i' ~/.ssh/config
 }
+
+complete -o nospace -F _ssh root
 
 # User specific aliases and functions
 alias cal='cal -3 -m'
