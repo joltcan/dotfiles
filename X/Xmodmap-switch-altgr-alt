@@ -1,0 +1,31 @@
+!
+! use together with https://github.com/rbreaves/kinto on macbook
+clear mod5
+clear mod1
+keycode  108 = Alt_L Meta_L Alt_L Meta_L
+keycode 64 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift
+add Mod5 = Mode_switch ISO_Level3_Shift ISO_Level3_Shift ISO_Level3_Shift
+add Mod1 = Alt_L 0x007D
+
+keycode  16 = 7 slash 7 ampersand bar backslash
+keycode  17 = 8 parenleft 8 asterisk bracketleft braceleft
+keycode  18 = 9 parenright 9 parenleft bracketright braceright
+keycode  19 = 0 equal 0 parenright braceright degree
+
+!xmodmap -e "keycode 38 = a A aacute Aacute ae AE ae"
+!    a: normal a
+!    A: shift + a
+!    á: altgr + a
+!    Á: shift + altgr + a
+!    æ: [some modifier combination] + a
+!    Æ: shift + [some modifier combination] + a
+!    æ: ???
+
+!remove Mod1 = Alt_L Meta_L Alt_L Meta_L
+!remove Mod5 = ISO_Level3_Shift NoSymbol ISO_Level3_Shift
+!keysym Alt_L Meta_L Alt_L Meta_L = ISO_Level3_Shift NoSymbol ISO_Level3_Shift
+!keysym ISO_Level3_Shift NoSymbol ISO_Level3_Shift = Alt_L Meta_L Alt_L Meta_L
+!add Mod1 = Alt_L Meta_L
+!add Mod5 = ISO_Level3_Shift
+!add Mod1 = ISO_Level3_Shift
+
