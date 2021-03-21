@@ -20,8 +20,6 @@ if [ -f ~/.uber_prompt.include ]; then
 fi
 if [ -f /etc/bash_completion ]; then
     source /etc/bash_completion
-    # use root for lazy sshing per below
-    complete -F _known_hosts root
 fi
 
 if [[ $OSTYPE == *darwin* ]]; then
@@ -37,8 +35,6 @@ function _own_ssh_known_hosts() {
 function _own_ssh_completion() {
     perl -ne 'print "$1 " if /^host (.+)$/i' ~/.ssh/config
 }
-
-complete -o nospace -F _ssh root
 
 # User specific aliases and functions
 alias cal='cal -3 -m'
@@ -57,4 +53,8 @@ alias time2date='python -c "import time,sys;  print (time.localtime(float(sys.ar
 alias upgrade='sudo apt-get update && sudo apt-get -y upgrade && sudo apt-get clean'
 alias vi=vim
 alias ap='ansible-playbook'
+
+# use completion for the root alias
+complete -o nospace -F _ssh root
+complete -F _known_hosts root
 
