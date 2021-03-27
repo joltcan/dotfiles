@@ -23,3 +23,13 @@ Update initird
 
     vi /etc/initramfs-tools/initramfs.conf 
     update-initramfs -u
+
+## kinto.sh / xkeysnail
+
+Use the config under X, or just modify the Rsuper-keys in your new config (.config/kinto/kinto.py)
+
+## textexpander / text shortcuts / espanso
+
+Edit config
+
+    espanso edit

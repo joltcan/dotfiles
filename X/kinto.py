@@ -37,6 +37,40 @@ chromeStr = "|".join(str(x) for x in chromes)
 # edges = [edge.casefold() for edge in edges]
 # edgeStr = "|".join(str(x) for x in edges)
 
+# cli apps and gui-apps
+define_keymap(None, {
+    K("LM-KEY_2"): K("RM-KEY_2"),                 # @
+    K("RSuper-KEY_2"): K("RM-KEY_2"),             # @
+    K("LM-KEY_3"): K("RM-KEY_3"),             # £
+    K("RSuper-KEY_3"): K("RM-KEY_3"),             # £
+    K("LM-KEY_4"): K("RM-KEY_4"),             # $
+    K("RSuper-KEY_4"): K("RM-KEY_4"),             # $
+    K("LM-KEY_5"): K("RM-KEY_5"),             # €
+    K("RSuper-KEY_5"): K("RM-KEY_5"),             # €
+    K("LM-KEY_6"): K("RM-KEY_6"),             # ¥
+    K("RSuper-KEY_6"): K("RM-KEY_6"),             # ¥
+    K("LM-KEY_7"): K("RM-KEY_102ND"),         # alt + 7 = |
+    K("RSuper-KEY_7"): K("RM-KEY_102ND"),         # alt + 7 = |
+    K("LM-RSuper-KEY_7"): K("RM-MINUS"),      # {
+    K("LShift-RSuper-KEY_7"): K("RM-MINUS"),      # {
+    K("LM-KEY_8"): K("RM-KEY_8"),             # [
+    K("RSuper-KEY_8"): K("RM-KEY_8"),             # [
+    K("LM-LShift-KEY_8"): K("RM-KEY_7"),      # {
+    K("LShift-RSuper-KEY_8"): K("RM-KEY_7"),      # {
+    K("LM-KEY_9"): K("RM-KEY_9"),             # ]
+    K("RSuper-KEY_9"): K("RM-KEY_9"),             # ]
+    K("LM-LShift-KEY_9"): K("RM-KEY_0"),      # {
+    K("LShift-RSuper-KEY_9"): K("RM-KEY_0"),      # {
+    # ~ on both alt+^ and shift+alt+^
+    K("RSuper-RIGHT_BRACE"): [
+            K("RM-RIGHT_BRACE"), K("SPACE"),
+        ],
+    K("LShift-RSuper-RIGHT_BRACE"): [
+            K("RM-RIGHT_BRACE"), K("SPACE"),
+        ],
+    # K(""): K(""),                                 #
+})
+
 define_multipurpose_modmap(
     # {Key.ENTER: [Key.ENTER, Key.RIGHT_CTRL]   # Enter2Cmd
     # {Key.CAPSLOCK: [Key.ESC, Key.RIGHT_CTRL]  # Caps2Esc
@@ -235,11 +269,13 @@ define_keymap(re.compile(browserStr, re.IGNORECASE),{
     K("RC-Key_7"): K("M-Key_7"),
     K("RC-Key_8"): K("M-Key_8"),
     K("RC-Key_9"): K("M-Key_9"),    # Jump to last tab
+    K("RC-LM-RIGHT"): K("LC-TAB"),    # Jump to last tab
+    K("RC-LM-LEFT"): K("LShift-LC-TAB"),    # Jump to last tab
 })
 
 # Open preferences in browsers
 define_keymap(re.compile("Firefox", re.IGNORECASE),{
-    K("C-comma"): [K("C-T"),K("a"),K("b"),K("o"),K("u"),K("t"),K("Shift-SEMICOLON"),K("p"),K("r"),K("e"),K("f"),K("e"),K("r"),K("e"),K("n"),K("c"),K("e"),K("s"),K("Enter")],
+    K("C-comma"): [K("C-T"),K("a"),K("b"),K("o"),K("u"),K("t"),K("Shift-DOT"),K("p"),K("r"),K("e"),K("f"),K("e"),K("r"),K("e"),K("n"),K("c"),K("e"),K("s"),K("Enter")],
 })
 define_keymap(re.compile(chromeStr, re.IGNORECASE),{
     K("C-comma"): [K("M-e"), K("s"),K("Enter")],
@@ -320,25 +356,6 @@ define_keymap(lambda wm_class: wm_class.casefold() not in remotes,{
     K("Alt-Delete"): K("C-Delete"),               # Delete Right Word of Cursor
     # K(""): pass_through_key,                    # cancel
     # K(""): K(""),                               #
-    K("RSuper-KEY_2"): K("RM-KEY_2"),             # @
-    K("RSuper-KEY_3"): K("RM-KEY_3"),             # £
-    K("RSuper-KEY_4"): K("RM-KEY_4"),             # $
-    K("RSuper-KEY_5"): K("RM-KEY_5"),             # €
-    K("RSuper-KEY_6"): K("RM-KEY_6"),             # ¥
-    K("RSuper-KEY_7"): K("RM-KEY_102ND"),         # alt + 7 = |
-    K("LShift-RSuper-KEY_7"): K("RM-MINUS"),      # {
-    K("RSuper-KEY_8"): K("RM-KEY_8"),             # [
-    K("LShift-RSuper-KEY_8"): K("RM-KEY_7"),      # {
-    K("RSuper-KEY_9"): K("RM-KEY_9"),             # ]
-    K("LShift-RSuper-KEY_9"): K("RM-KEY_0"),      # {
-    # ~ on both alt+^ and shift+alt+^
-    K("RSuper-RIGHT_BRACE"): [
-            K("RM-RIGHT_BRACE"), K("SPACE"),
-        ],
-    K("LShift-RSuper-RIGHT_BRACE"): [
-            K("RM-RIGHT_BRACE"), K("SPACE"),
-        ],
-    # K(""): K(""),                                 #
 })
 
 define_keymap(lambda wm_class: wm_class.casefold() not in mscodes,{
@@ -552,3 +569,4 @@ define_keymap(re.compile(termStr, re.IGNORECASE),{
     K("RC-SLASH"): K("C-Shift-SLASH"),
     K("RC-KPASTERISK"): K("C-Shift-KPASTERISK"),
 }, "terminals")
+
