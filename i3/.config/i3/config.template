@@ -20,13 +20,6 @@ font pango:Terminus 9px
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -78,7 +71,8 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+w layout tabbe
+
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -122,7 +116,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -166,17 +160,17 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 bindsym $mod+Control+Shift+k focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, focus parent, kill
 
 bar {
-		status_command i3blocks -c ~/dotfiles/i3/.config/i3/i3blocks.conf
-		tray_output primary 
-		bindsym button4 nop
-		bindsym button5 nop
+    status_command i3status -c ~/.config/i3/i3status.conf
+    position bottom
+    output primary
+    tray_output none
+    font pango:DejaVu Sans Mono 10
+    separator_symbol “⁞”
 }
 
 # Lock
 bindsym Mod1+Ctrl+l exec xautolock -locknow
 bindsym $mod+Shift+t exec "toggle_screen.sh"
-#bindsym --release Shift+Ctrl+p exec --no-startup-id "/home/jolt/Dropbox/linux/get-pw.py| perl -p -e 's/\n//' | xvkbd -file -"
-bindsym --release Shift+Ctrl+p exec --no-startup-id "/home/jolt/Dropbox/linux/get-pw.py | xvkbd -no-jump-pointer -file -"
 bindsym Mod1+c exec --no-startup-id xfce4-popup-clipman 
 bindsym --release $mod+v exec --no-startup-id xdotool key --clearmodifiers Shift+Insert
 
@@ -187,15 +181,13 @@ for_window [title="Synergy"] floating enable
 for_window [title="Nitrogen"] floating enable
 for_window [title="Unlock Login Keyring"] floating enable
 for_window [class="seahorse"] floating enable
-for_window [class="1Password.exe" ] move to scratchpad
 
 # Exec on startup 
 exec --no-startup-id i3-msg reload
+#exec --no-startup-id xfce4-clipman
 #exec --no-startup-id unity-settings-daemon
 #exec --no-startup-id autokey-gtk
-exec --no-startup-id xfce4-clipman
 #exec --no-startup-id xautolock -locker "/usr/local/bin/lock_script.sh" -time 5 -corners ++-0 -cornerdelay 1 -cornerredelay 5 -cornersize 5 
-exec --no-startup-id pnmixer
 exec --no-startup-id nm-applet
 exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' # caps is now escape
 exec --no-startup-id i3-msg reload
@@ -204,20 +196,20 @@ exec --no-startup-id i3-msg reload
 workspace 1 output HDMI-1
 
 # bind window to workspace?
-assign [class="google-chrome" title="^Grafana.*"] 2
-assign [class="firefox" title="^Grafana.*"] 2
+assign [class="google-chrome" title="^Grafana.*"] 1
+assign [class="firefox" title="^Grafana.*"] 1
 
+# symlink to terminator
 exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id i3-msg 'workspace 1'
-#exec firefox --kiosk https://svenska.yle.fi
+# pkg_add barrier
+#exec --no-startup-id barrierc --no-tray --daemon <host>
+exec firefox https://svenska.yle.fi
 
 # scratchpad
 bindsym $mod+shift+s scratchpad show
-bindsym $mod+Shift+minus move scratchpad
-
-# pkg_add barrier
-#exec --no-startup-id barrierc --no-tray --daemon
+bindsym $mod+shift+minus move scratchpad
 
 # bluetooth permissions in dbus was hard to find. Add user to group bluetooth
 # and <allow send_type="method_call"/> to root and bluetooth
