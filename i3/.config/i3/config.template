@@ -191,40 +191,33 @@ for_window [class="1Password.exe" ] move to scratchpad
 
 # Exec on startup 
 exec --no-startup-id i3-msg reload
-exec --no-startup-id unity-settings-daemon
-exec --no-startup-id autokey-gtk
+#exec --no-startup-id unity-settings-daemon
+#exec --no-startup-id autokey-gtk
 exec --no-startup-id xfce4-clipman
-exec --no-startup-id xautolock -locker "/usr/local/bin/lock_script.sh" -time 5 -corners ++-0 -cornerdelay 1 -cornerredelay 5 -cornersize 5 
+#exec --no-startup-id xautolock -locker "/usr/local/bin/lock_script.sh" -time 5 -corners ++-0 -cornerdelay 1 -cornerredelay 5 -cornersize 5 
 exec --no-startup-id pnmixer
-exec --no-startup-id "dropbox start"
 exec --no-startup-id nm-applet
 exec --no-startup-id xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape' # caps is now escape
 exec --no-startup-id i3-msg reload
 
 # bind workspaces to the right monitors
-workspace 1 output DP2-1
-workspace 2 output DP2-1
-workspace 3 output DP2-2
-workspace 4 output DP2-2
-workspace 5 output eDP1
+workspace 1 output HDMI-1
 
 # bind window to workspace?
-assign [class="google-chrome" title="^Grafana.*"] 5
+assign [class="google-chrome" title="^Grafana.*"] 2
+assign [class="firefox" title="^Grafana.*"] 2
 
 exec --no-startup-id i3-sensible-terminal
 exec --no-startup-id i3-sensible-terminal
-exec --no-startup-id franz
-exec --no-startup-id i3-msg 'workspace 3'
-exec google-chrome
+exec --no-startup-id i3-msg 'workspace 1'
+#exec firefox --kiosk https://svenska.yle.fi
 
 # scratchpad
 bindsym $mod+shift+s scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
-# 1Password and agent
-exec --no-startup-id wine "C:\Program Files (x86)\1Password 4\Agile1pAgent.exe"
-exec --no-startup-id pidgin
-#exec --no-startup-id synergy
+# pkg_add barrier
+#exec --no-startup-id barrierc --no-tray --daemon
 
 # bluetooth permissions in dbus was hard to find. Add user to group bluetooth
 # and <allow send_type="method_call"/> to root and bluetooth

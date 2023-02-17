@@ -1,0 +1,4 @@
+# dont save i3 config, only the default
+i3/.config/i3/config
+*.swp
+*.pyc
