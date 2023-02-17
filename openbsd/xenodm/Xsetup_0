@@ -1,0 +1,19 @@
+#!/bin/sh
+
+xrandr --output default --dpi 96
+
+# disable screensaver
+xset s off
+xset -dpms
+
+# requires pkg_add terminus-font
+xset fp+ /usr/local/share/fonts/terminus
+
+# set background color to match Xresources 
+BGCOLOR="#6187AD"
+# pkg_add feh, get the image from https
+/usr/local/bin/feh --no-fehbg -B "$BGCOLOR" -g +720+500 --bg-center /etc/X11/xenodm/pixmaps/BluePuffy.png
+
+#OS_NAME=$(uname -n)
+#OS_INFO=$(uname -smr)
+#xclock -geometry -0+0 i -strftime "$OS_NAME ($OS_INFO) | %a. %d %b. %Y  %H:%M " &

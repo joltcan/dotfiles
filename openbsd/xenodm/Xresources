@@ -1,0 +1,68 @@
+! ThinkPad colorscheme, https://www.tumfatig.net/2019/customizing-openbsd-xenodm/
+!
+!
+!
+
+#define WHITE	#EDF6E6
+#define BLACK	#252123
+#define RED	#DA9B9A
+#define BLUE	#7AADD9
+#define BROWN   #6E6967
+#define DKBROWN	#54504F
+#define DKBLUE	#6187AD
+#define GREY	#54697F
+#define DKGREY	#4A566B
+
+xroot.background: BLACK
+
+! ------------
+! XLogin
+!
+
+
+!xlogin*greeting: CLIENTHOST
+xlogin*greeting: 
+xlogin*namePrompt: \040\040\040\040\040\040Login\040:
+xlogin.Login.passwdPrompt: Password:\040
+xlogin*fail: Login incorrect or forbidden
+xlogin.Login.echoPasswd:   true
+
+xlogin*borderWidth:            0
+xlogin.Login.frameWidth:       0
+xlogin.Login.innerFramesWidth: 0
+xlogin.Login.sepWidth:         0
+
+xlogin.Login.background:  DKBLUE
+xlogin.Login.failColor:   RED
+xlogin.Login.foreground:  WHITE
+xlogin.Login.greetColor:  WHITE
+xlogin.Login.inpColor:    BLUE
+xlogin.Login.promptColor: WHITE
+
+#if WIDTH > 800
+xlogin.Login.face:       DejaVu Sans-12
+xlogin.Login.failFace:   DejaVu Sans-12:bold
+xlogin.Login.greetFace:  DejaVu Sans-16:bold
+xlogin.Login.promptFace: DejaVu Sans-12
+#else
+xlogin.Login.face:       DejaVu Sans-10
+xlogin.Login.failFace:   DejaVu Sans-10:bold
+xlogin.Login.greetFace:  DejaVu Sans-14:bold
+xlogin.Login.promptFace: DejaVu Sans-10
+#endif
+
+! wanna have a picture at the login box?
+! I add mine in Xsetup_0 instead
+!xlogin*logoFileName: /etc/X11/xenodm/pixmaps/BluePuffy.xpm
+!xlogin*logoPadding: 0
+
+xclock.Clock.face: DejaVu Sans-10
+
+XConsole*background:	black
+XConsole*foreground:	white
+XConsole*borderWidth:	2
+XConsole*borderColor:   grey
+XConsole.text.geometry:	480x130
+XConsole.verbose:	true
+XConsole*iconic:	true
+XConsole*font:		fixed
