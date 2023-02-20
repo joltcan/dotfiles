@@ -9,6 +9,7 @@
 [user]
 	name = Fredrik Lundhag
 	useConfigOnly = true
+	email = fredrik.lundhag@impactct.com
 # user }}}
 
 # color {{{
@@ -40,6 +41,7 @@
     default = current
 [pull]
     default = current
+    ff = only
 [diff]
     mnemonicprefix = true
 [branch]
@@ -187,3 +189,5 @@
 	required = true
 [status]
 	submoduleSummary = true
+[init]
+	defaultBranch = master
