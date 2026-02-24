@@ -9,7 +9,6 @@
 [user]
 	name = Fredrik Lundhag
 	useConfigOnly = true
-	email = fredrik.lundhag@impactct.com
 # user }}}
 
 # color {{{
@@ -184,10 +183,11 @@
 [rebase]
   autosquash = true
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 	required = true
+	process = git-lfs filter-process
 [status]
 	submoduleSummary = true
 [init]
-	defaultBranch = master
+	defaultBranch = main
