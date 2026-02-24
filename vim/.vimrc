@@ -44,8 +44,9 @@ set smartindent             " intelligently try to guess the a new lines indent 
 set winminheight=1          " ok to squash windows
 set incsearch               " makes vim search as soon as you start typing (can be slow)
 set expandtab               " converts tabs/indents to normal spaces
-set list                    " show hidden chars per default
-set nofoldenable            " disable folding
+set signcolumn=no
+"set list                    " show hidden chars per default
+"set nofoldenable            " disable folding
 
 :let mapleader = "\<Space>"
 map <silent> <Leader>p :set invpaste<CR>
@@ -124,21 +125,6 @@ endfunction
 let &t_ti .= WrapForTmux("\<Esc>[?2004h")
 let &t_te .= WrapForTmux("\<Esc>[?2004l")
 
-function! XTermPasteBegin(ret)
-  set pastetoggle=<f29>
-  set paste
-  return a:ret
-endfunction
-
-execute "set <f28>=\<Esc>[200~"
-execute "set <f29>=\<Esc>[201~"
-map <expr> <f28> XTermPasteBegin("i")
-imap <expr> <f28> XTermPasteBegin("")
-vmap <expr> <f28> XTermPasteBegin("c")
-cmap <f28> <nop>
-cmap <f29> <nop>
-" end auto paste
- 
 " use 256 colors
 set t_Co=256
 set term=screen-256color
@@ -161,36 +147,28 @@ colorscheme onehalfdark
 " thanks leihog!
 set listchars=tab:>\ ,trail:.,extends:#,nbsp:.
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
-set ruler        " show the ruler
+"set ruler        " show the ruler
 set cursorline   " highlight cursor line
-
-" git gutter
-if exists('&signcolumn')  " Vim 7.4.2201
-  set signcolumn=yes
-else
-  let g:gitgutter_sign_column_always = 1
-endif
 
 " map f8 to open file under cursor
 map <F8> :vertical wincmd f<CR>
 
 noremap <silent> <Space> :silent noh<Bar>echo<CR>
 
-" https://stackoverflow.com/a/53930943/6148844
+" map column with changes to track file edits. Leader 2 == <space> 2
 nnoremap <Leader>2 :call ToggleSignColumn()<CR>
-" Toggle signcolumn. Works only on vim>=8.0 or NeoVim
+
 function! ToggleSignColumn()
-    if !exists("b:signcolumn_on") || b:signcolumn_on
-        set signcolumn=no
-        let b:signcolumn_on=0
+    if &l:signcolumn ==# 'no'
+        setlocal signcolumn=yes
     else
-        set signcolumn=auto
-        let b:signcolumn_on=1
+        setlocal signcolumn=no
     endif
+    redraw!
 endfunction
 
+
 " echodoc
-" To use echodoc, you must increase 'cmdheight' value.
+"To use echodoc, you must increase 'cmdheight' value.
 set cmdheight=2
 let g:echodoc_enable_at_startup = 1
-
